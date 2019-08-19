@@ -1,3 +1,10 @@
+"""
+Makes preprocessed csv files:
+- lemmata to (normalized) words
+- (normalized) word to lemmata
+"""
+
+
 import codecs
 import os
 
@@ -97,7 +104,13 @@ def save_lemmatizer(lemmatizers):
 def read_lemmatizer():
     with codecs.open("lemmatizer.csv", "r", encoding="utf-8") as f:
         lines = f.read().split("\n")
-        return {line.split("\t")[0]: line.split("\t")[0] for line in lines}
+        return {line.split("\t")[0]: line.split("\t")[1:] for line in lines}
+
+
+def read_lemma_to_forms():
+    with codecs.open("lemma_to_forms.csv", "r", encoding="utf-8") as f:
+        lines = f.read().split("\n")
+        return {line.split("\t")[0]: line.split(";")[1:] for line in lines}
 
 
 if __name__ == "__main__":

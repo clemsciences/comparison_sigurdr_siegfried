@@ -13,6 +13,7 @@ from lxml import etree
 
 
 DATA_DIRECTORY = "rem-corralled-20161222"
+PREPROCESSED_DIRECTORY = "rem-preprocessing"
 
 
 def extract_annotations(entry):
@@ -102,13 +103,13 @@ def save_lemmatizer(lemmatizers):
 
 
 def read_lemmatizer():
-    with codecs.open("lemmatizer.csv", "r", encoding="utf-8") as f:
+    with codecs.open(os.path.join(PREPROCESSED_DIRECTORY, "lemmatizer.csv"), "r", encoding="utf-8") as f:
         lines = f.read().split("\n")
         return {line.split("\t")[0]: line.split("\t")[1:] for line in lines}
 
 
 def read_lemma_to_forms():
-    with codecs.open("lemma_to_forms.csv", "r", encoding="utf-8") as f:
+    with codecs.open(os.path.join(PREPROCESSED_DIRECTORY, "lemma_to_forms.csv"), "r", encoding="utf-8") as f:
         lines = f.read().split("\n")
         return {line.split("\t")[0]: line.split(";")[1:] for line in lines}
 

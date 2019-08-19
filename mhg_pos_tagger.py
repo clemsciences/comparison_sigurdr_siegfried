@@ -13,6 +13,7 @@ from lxml import etree
 
 
 DATA_DIRECTORY = "rem-corralled-20161222"
+PREPROCESSED_DIRECTORY = "rem-preprocessing"
 
 
 def extract_annotations(entry):
@@ -120,19 +121,19 @@ def save_pos_tagger(pos_taggers):
 
 
 def read_pos_tagger():
-    with codecs.open("pos_lemmata.csv", "r", encoding="utf-8") as f:
+    with codecs.open(os.path.join(PREPROCESSED_DIRECTORY, "pos_lemmata.csv"), "r", encoding="utf-8") as f:
         lines = f.read().split("\n")
         return {line.split("\t")[0]: line.split("\t")[1].split(";") for line in lines}
 
 
 def read_lemmata_to_pos():
-    with codecs.open("lemmata_pos.csv", "r", encoding="utf-8") as f:
+    with codecs.open(os.path.join(PREPROCESSED_DIRECTORY, "lemmata_pos.csv"), "r", encoding="utf-8") as f:
         lines = f.read().split("\n")
         return {line.split("\t")[0]: line.split("\t")[1].split(";") for line in lines}
 
 
 def read_norm_to_pos_tagger():
-    with codecs.open("norm_pos.csv", "r", encoding="utf-8") as f:
+    with codecs.open(os.path.join(PREPROCESSED_DIRECTORY, "norm_pos.csv"), "r", encoding="utf-8") as f:
         lines = f.read().split("\n")
         return {line.split("\t")[0]: line.split("\t")[1].split(";") for line in lines}
 

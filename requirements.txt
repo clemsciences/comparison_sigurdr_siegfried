@@ -3,3 +3,4 @@ PyPDF2
 gensim
 cltk==0.1.110
 bs4
+lxml

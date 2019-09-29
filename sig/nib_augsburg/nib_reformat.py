@@ -13,6 +13,11 @@ nib_directories = ["nib_a_00", "nib_b_00", "nib_c_00", "nib_n_00"]
 
 
 def extract_text(html_text) -> List[List[str]]:
+    """
+
+    :param html_text:
+    :return:
+    """
     lines = [i.text.replace("\xa0", "") for i in html_text.find("div", attrs={"class": "contentus"}).findAll("h3")]
     return [line.split("  ") for line in lines]
 
@@ -20,6 +25,7 @@ def extract_text(html_text) -> List[List[str]]:
 def save_txt_reformat(main_links: List[str], retrieved_texts: dict):
     """
     Save TXT files
+
     :param main_links:
     :param retrieved_texts:
     :return:
@@ -54,13 +60,20 @@ def prepare_tei(main_links: List[str], retrieved_texts):
 
 
 def add_structure_tags(main_link: str):
+    """
+
+    :param main_link:
+    :return:
+    """
     filename = main_link.split("/")[-1].split(".")[0][:-3] + ".txt"
     with codecs.open(filename, "r", encoding="utf-8") as f:
         text = f.read()
+    text = text.replace("<", "&lt;")
+    text = text.replace(">", "&gt;")
     new_lines = ["<chapter>"]
     for line in text.split("\n"):
         parts_of_line = line.split("\t")
-        new_lines.append("\t<l>\n\t\t<seg>"+"</seg>\n\t\t<seg>".join(parts_of_line)+
+        new_lines.append("\t<l>\n\t\t<seg>"+"</seg>\n\t\t<seg>".join(parts_of_line) +
                          "</seg>\n\t</l>")
         if line == "":
             new_lines.append("</chapter>\n<chapter>")

@@ -25,7 +25,7 @@ with io.open(os.path.join(CURDIR, "README.md"), "r", encoding="utf-8") as f:
 
 setup(
     name="sig",
-    version="1.0.0",
+    version="1.0.1",
     author="Clément Besnier",
     author_email="clemsciences@aol.com",
     description="",

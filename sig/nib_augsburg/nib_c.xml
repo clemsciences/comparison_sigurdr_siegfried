@@ -1,0 +1,36 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>NIBELUNGENLIED</title>
+                <author/>
+            </titleStmt>
+            <editionStmt>
+                <edition>
+                    <date/>
+                </edition>
+            </editionStmt>
+            <publicationStmt>
+                <p>no publication statement available</p>
+
+        </publicationStmt>
+            <sourceDesc>
+                <p>Written by OpenOffice</p>
+
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <listChange>
+                <change>
+                    <name/>
+                    <date/>
+                </change>
+            </listChange>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+<!--            INSERT COMPLETE NIBELUNGENLIED HANDSCHRIFT C HERE-->
+        </body>
+    </text>
+</TEI>

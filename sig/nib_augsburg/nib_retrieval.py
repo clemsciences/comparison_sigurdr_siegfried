@@ -19,7 +19,17 @@ n_pages = 39
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]
 
 
-def int_to_string(i):
+def int_to_string(i: int):
+    """
+    >>> int_to_string(12)
+    '12'
+
+    >>> int_to_string(4)
+    '04'
+
+    :param i: integer
+    :return:
+    """
     if 0 <= i < 10:
         return "0"+str(i)
     else:
@@ -28,6 +38,9 @@ def int_to_string(i):
 
 def compute_links(main_links):
     """
+    >>> links = ['http://ok.com/machin_00.html']
+    >>> compute_links(links)['http://ok.com/machin_00.html'][3]
+    'http://ok.com/machin_03.html'
 
     :param main_links:
     :return:

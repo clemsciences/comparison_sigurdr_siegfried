@@ -39,7 +39,8 @@ def get_nib_tei():
     """
     retrieved_texts = {}
     for main_link in retrieval.MAIN_LINKS:
-        retrieved_texts[main_link] = ["\n".join(["\t".join(line) for line in txt]) for txt in reader.read_txt(main_link)]
+        retrieved_texts[main_link] = ["\n".join(["\t".join(line) for line in txt])
+                                      for txt in reader.read_txt(main_link)]
     reformat.prepare_tei(retrieval.MAIN_LINKS, retrieved_texts)
 
 
@@ -51,8 +52,14 @@ def get_nib_tei_group_annotations():
     reformat.add_structure_tags(retrieval.MAIN_LINKS[0])
 
 
+def get_nib_tei_semgents():
+    text = reader.read_tei(retrieval.MAIN_LINKS[0])
+    print(text)
+
+
 if __name__ == "__main__":
-    get_nib_html
+    get_nib_html()
     get_nib_txt()
     get_nib_tei()
     get_nib_tei_group_annotations()
+    get_nib_tei_semgents()

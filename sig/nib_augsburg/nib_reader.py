@@ -9,6 +9,7 @@ from typing import List
 from lxml import etree
 from bs4 import BeautifulSoup
 
+from sig import PACKDIR
 from sig.nib_augsburg.nib_retrieval import MAIN_LINKS
 
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]
@@ -69,7 +70,7 @@ def get_xml_root(main_link):
     """
     parser = etree.XMLParser(load_dtd=True, no_network=False)
     filename = main_link.split("/")[-1].split(".")[0][:-3]+".xml"
-    tree = etree.parse(filename, parser=parser)
+    tree = etree.parse(os.path.join(PACKDIR, "nib_augsburg", filename), parser=parser)
     return tree.getroot()
 
 

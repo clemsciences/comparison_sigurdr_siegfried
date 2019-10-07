@@ -5,4 +5,5 @@ gensim
 cltk==0.1.110
 bs4
 lxml
--e git+https://github.com/clemsciences/old_norse_corpus#egg=norsecorpus
+norsecorpus==1.0.2
+jupyter

@@ -49,8 +49,8 @@ def make_norm_to_pos_tagger():
             norm_set = set(norm)
 
             pos_to_norm = {norm: {token["pos"] for token in tokens
-                                    if "lemma" in token and "pos" in token and token["norm"] == norm}
-                              for norm in norm_set}
+                                  if "lemma" in token and "pos" in token and token["norm"] == norm}
+                           for norm in norm_set}
             yield pos_to_norm
 
 
@@ -65,7 +65,7 @@ def make_lemma_to_pos_tagger():
             pos_set = set(pos_tags)
 
             lemmata_to_pos = {lemma: {token["pos"] for token in tokens
-                                    if "lemma" in token and "pos" in token and token["lemma"] == lemma}
+                                      if "lemma" in token and "pos" in token and token["lemma"] == lemma}
                               for lemma in lemmata_set}
             yield lemmata_to_pos
 

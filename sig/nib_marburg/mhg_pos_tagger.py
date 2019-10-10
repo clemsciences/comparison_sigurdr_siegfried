@@ -9,11 +9,12 @@ import codecs
 import os
 
 import collections
+import pickle
 from lxml import etree
 
 
-# DATA_DIRECTORY = "rem-corralled-20161222"
-DATA_DIRECTORY = "."
+DATA_DIRECTORY = "rem-corralled-20161222"
+# DATA_DIRECTORY = "."
 PREPROCESSED_DIRECTORY = "rem-preprocessing"
 
 
@@ -92,6 +93,10 @@ def save_norm_to_pos_tagger(norm_to_pos_taggers):
 
     with codecs.open("norm_pos.csv", "w", encoding="utf-8") as f:  # 61312
         f.write("\n".join([word + "\t" + ";".join(the_norm_to_pos_taggers[word]) for word in words]))
+
+    with open("tokens_pos.pickle", "wb") as f:
+        pickle.dump(the_norm_to_pos_taggers, f)
+
     return True
 
 
@@ -105,6 +110,10 @@ def save_lemmata(lemmatas):
 
     with codecs.open("lemmata_pos.csv", "w", encoding="utf-8") as f:  # 61312
         f.write("\n".join([word + "\t" + ";".join(the_lemmata[word]) for word in words]))
+
+    with open("lemmata_pos.pickle", "wb") as f:
+        pickle.dump(the_lemmata, f)
+
     return True
 
 
@@ -118,6 +127,10 @@ def save_pos_tagger(pos_taggers):
 
     with codecs.open("pos_lemmata.csv", "w", encoding="utf-8") as f: # 61312
         f.write("\n".join([word+"\t"+";".join(the_pos_tagger[word]) for word in poss]))
+
+    with open("pos_lemmata.pickle", "wb") as f:
+        pickle.dump(the_pos_tagger, f)
+
     return True
 
 

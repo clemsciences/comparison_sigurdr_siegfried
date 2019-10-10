@@ -9,6 +9,7 @@ import codecs
 import os
 
 import collections
+import pickle
 from lxml import etree
 
 
@@ -41,7 +42,7 @@ def get_data():
 
 def make_lemma_to_forms():
     for root in get_data():
-        if root:
+        if root is not None:
             tokens = [extract_annotations(entry) for entry in root.findall(".//tok_anno")]
             lemmata = extract_by_tag("lemma", tokens)
             lemmata_set = set(lemmata)
@@ -53,7 +54,7 @@ def make_lemma_to_forms():
 
 def make_lematizer():
     for root in get_data():
-        if root:
+        if root is not None:
             tokens = [extract_annotations(entry) for entry in root.findall(".//tok_anno")]
             # lemmata = extract_by_tag("lemma", tokens)
             # lemmata_set = set(lemmata)
@@ -86,6 +87,10 @@ def save_lemma_to_forms(lemma_to_forms):
 
     with codecs.open("lemma_to_forms.csv", "w", encoding="utf-8") as f: # 61312
         f.write("\n".join([word+"\t"+";".join(the_lemma_to_forms[word]) for word in words]))
+
+    with open("lemma_to_tokens.pickle", "wb") as f:
+        pickle.dump(the_lemma_to_forms, f)
+
     return True
 
 
@@ -99,6 +104,10 @@ def save_lemmatizer(lemmatizers):
 
     with codecs.open("lemmatizer.csv", "w", encoding="utf-8") as f: # 61312
         f.write("\n".join([word+"\t"+"\t".join(the_lemmatizer[word]) for word in words]))
+
+    with open("lemmatizers.pickle", "wb") as f:
+        pickle.dump(the_lemmatizer, f)
+
     return True
 
 
@@ -118,5 +127,5 @@ if __name__ == "__main__":
     lemmatizers = make_lematizer()
     save_lemmatizer(lemmatizers)
 
-    # lemma_to_forms = make_lemma_to_forms()
-    # save_lemma_to_forms(lemma_to_forms)
+    lemma_to_forms = make_lemma_to_forms()
+    save_lemma_to_forms(lemma_to_forms)

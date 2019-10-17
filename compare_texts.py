@@ -7,6 +7,9 @@ import re
 import codecs
 from lxml import etree
 
+
+__author__ = ["Clément Besnier <clemsciences@aol.com>", ]
+
 data_directory = "rem-preprocessing"
 filename = "M321-G1.xml"
 

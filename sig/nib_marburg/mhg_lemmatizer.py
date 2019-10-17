@@ -12,17 +12,11 @@ import collections
 import pickle
 from lxml import etree
 
+__author__ = ["Clément Besnier <clemsciences@aol.com>", ]
+
 
 DATA_DIRECTORY = "rem-corralled-20161222"
 PREPROCESSED_DIRECTORY = "rem-preprocessing"
-
-
-def extract_annotations(entry):
-    return {child.tag: child.get("tag") for child in entry.getchildren()}
-
-
-def extract_by_tag(tag, tokens):
-    return [token[tag] for token in tokens if tag in token]
 
 
 stringify = etree.XPath("string()")

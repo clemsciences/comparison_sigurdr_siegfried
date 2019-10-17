@@ -1,44 +1,32 @@
 """
 
 """
-
-
 import os
-import codecs
-
+import pickle
 from lxml import etree
-from sig.nib_marburg.utils import extract_annotations, extract_by_tag
 
+from sig.nib_marburg.utils import get_data, get_root
 
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]
 
 DATA_DIRECTORY = "rem-corralled-20161222"
-# DATA_DIRECTORY = "."
 PREPROCESSED_DIRECTORY = "rem-preprocessing"
 
 parser = etree.XMLParser(load_dtd=True, no_network=False)
 
 
-def read_text(filename):
-    tree = etree.parse(os.path.join(DATA_DIRECTORY, filename), parser=parser)
-    root = tree.getroot()
-    # tokens = [extract_annotations(entry) for entry in root.findall(".//tok_anno")]
+def read_text_from_filename(filename):
+    root = get_root(filename, parser)
+    return read_text_from_filename(root)
 
+
+def read_text_from_root(root):
     entries = root.findall(".//token")
-
     transcriptions_diplo = []
     transcriptions_anno = []
     transcriptions_anno_utf = []
 
     annotations = [[]]
-
-    # normalised = [[]]
-    # lemmatized = [[]]
-    # pos = [[]]
-    # pos_gen = [[]]
-    # infl = [[]]
-    # infl_class = [[]]
-    # infl_class_gen = [[]]
 
     i = 0
 
@@ -57,14 +45,6 @@ def read_text(filename):
             child_infl_class = child_anno.find("inflClass")
             child_infl_class_gen = child_anno.find("inflClass_gen")
 
-            # normalised[i].append(child_norm.get("tag"))
-            # lemmatized[i].append(child_lemma.get("tag"))
-            # pos[i].append(child_pos.get("tag"))
-            # pos_gen[i].append(child_pos_gen.get("tag"))
-            # infl[i].append(child_infl.get("tag"))
-            # infl_class[i].append(child_infl_class.get("tag"))
-            # infl_class_gen[i].append(child_infl_class_gen.get("tag"))
-
             annotations[i].append((
                 child_norm.get("tag"),
                 child_lemma.get("tag"),
@@ -75,49 +55,28 @@ def read_text(filename):
                 child_infl_class_gen.get("tag")
             ))
         else:
-            # normalised[i].append(child_diplo.get("utf"))
-            # normalised.append([])
-            #
-            # lemmatized[i].append(child_diplo.get("utf"))
-            # lemmatized.append([])
-            #
-            # pos[i].append(child_diplo.get("utf"))
-            # pos.append([])
-            #
-            # pos_gen[i].append(child_diplo.get("utf"))
-            # pos_gen.append([])
-            #
-            # infl[i].append(child_diplo.get("utf"))
-            # infl.append([])
-            #
-            # infl_class[i].append(child_diplo.get("utf"))
-            # infl_class.append([])
-            #
-            # infl_class_gen[i].append(child_diplo.get("utf"))
-            # infl_class_gen.append([])
-
             annotations[i].append(child_diplo.get("utf"))
             annotations.append([])
 
             i += 1
-
-    # norms = extract_by_tag("norm", tokens)
-    # print(norms[:20])
-    # with codecs.open(os.path.join(PREPROCESSED_DIRECTORY, "M036-N1.xml"), "r", encoding="utf-8") as f:
-    #     f.write(norms)
-    # print(normalised[:20])
-    # print(pos[:20])
-    # print(pos_gen[:20])
-    # print(infl[:20])
-    # print(infl_class[:20])
-    # print(infl_class_gen[:20])
-
-    # return zip(normalised, pos, pos_gen, infl, infl_class, infl_class_gen)
     return annotations
 
 
-def annotation_text(filename):
-    pass
+def read_annotations():
+    for root in get_data(DATA_DIRECTORY, parser):
+        if root is not None:
+            yield read_text_from_root(root)
 
 
-print(list(read_text("M035-N1.xml"))[:10])
+def save_annotations():
+    i = 0
+    for annotations in read_annotations():
+        i += 1
+        with open(os.path.join("annotations", f"annotations_{i}.pickle"), "wb") as f:
+            pickle.dump(annotations, f)
+
+
+save_annotations()
+
+
+# print(list(read_text_from_filename("M035-N1.xml"))[:10])

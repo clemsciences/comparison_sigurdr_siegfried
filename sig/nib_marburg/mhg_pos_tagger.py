@@ -12,6 +12,7 @@ import collections
 import pickle
 from lxml import etree
 
+from sig.nib_marburg.utils import get_data, extract_by_tag, extract_annotations
 
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]
 
@@ -25,19 +26,8 @@ stringify = etree.XPath("string()")
 parser = etree.XMLParser(load_dtd=True, no_network=False)
 
 
-def get_data():
-    for filename in os.listdir(DATA_DIRECTORY):
-        print(filename)
-        if filename.endswith("xml"):
-            tree = etree.parse(os.path.join(DATA_DIRECTORY, filename), parser=parser)
-            yield tree.getroot()
-        else:
-            print("None")
-    return None
-
-
 def make_norm_to_pos_tagger():
-    for root in get_data():
+    for root in get_data(DATA_DIRECTORY, parser):
         if root is not None:
             tokens = [extract_annotations(entry) for entry in root.findall(".//tok_anno")]
             norm = extract_by_tag("norm", tokens)
@@ -50,7 +40,7 @@ def make_norm_to_pos_tagger():
 
 
 def make_lemma_to_pos_tagger():
-    for root in get_data():
+    for root in get_data(DATA_DIRECTORY, parser):
         if root is not None:
             tokens = [extract_annotations(entry) for entry in root.findall(".//tok_anno")]
             lemmata = extract_by_tag("lemma", tokens)
@@ -66,7 +56,7 @@ def make_lemma_to_pos_tagger():
 
 
 def make_pos_tagger_to_lemma():
-    for root in get_data():
+    for root in get_data(DATA_DIRECTORY, parser):
         if root is not None:
             tokens = [extract_annotations(entry) for entry in root.findall(".//tok_anno")]
             pos_tags = extract_by_tag("pos", tokens)

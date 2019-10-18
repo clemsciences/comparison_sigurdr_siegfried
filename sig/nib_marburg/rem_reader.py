@@ -94,32 +94,32 @@ def read_pickle_annotations():
 def train_tnt(data):
     tnt_tagger = TnT()
     tnt_tagger.train(data)
-    # with open(os.path.join(PACKDIR, "nib_marburg", "tnt.pickle"), "wb") as f:
-    #     pickle.dump(tnt_tagger, f)
+    with open(os.path.join(PACKDIR, "nib_marburg", "tnt.pickle"), "wb") as f:
+        pickle.dump(tnt_tagger, f)
     res = tnt_tagger.tag("uns ist in alten mæren wunders vil geseit".split(" "))
     print(res)
 
 
 def train_unigram(data):
     unigram_tagger = UnigramTagger(data)
-    # with open(os.path.join(PACKDIR, "nib_marburg", "unigram.pickle"), "wb") as f:
-    #     pickle.dump(unigram_tagger, f)
+    with open(os.path.join(PACKDIR, "nib_marburg", "unigram.pickle"), "wb") as f:
+        pickle.dump(unigram_tagger, f)
     res = unigram_tagger.tag("uns ist in alten mæren wunders vil geseit".split(" "))
     print(res)
 
 
 def train_bigram(data):
     bigram_tagger = BigramTagger(data)
-    # with open(os.path.join(PACKDIR, "nib_marburg", "bigram.pickle"), "wb") as f:
-    #     pickle.dump(bigram_tagger, f)
+    with open(os.path.join(PACKDIR, "nib_marburg", "bigram.pickle"), "wb") as f:
+        pickle.dump(bigram_tagger, f)
     res = bigram_tagger.tag("uns ist in alten mæren wunders vil geseit".split(" "))
     print(res)
 
 
 def train_trigram(data):
     trigram_tagger = TrigramTagger(data)
-    # with open(os.path.join(PACKDIR, "nib_marburg", "trigram.pickle"), "wb") as f:
-    #     pickle.dump(trigram_tagger, f)
+    with open(os.path.join(PACKDIR, "nib_marburg", "trigram.pickle"), "wb") as f:
+        pickle.dump(trigram_tagger, f)
     res = trigram_tagger.tag("uns ist in alten mæren wunders vil geseit".split(" "))
     print(res)
 

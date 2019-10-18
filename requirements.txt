@@ -1,3 +1,4 @@
+nltk
 requests
 # pdfminer.six
 PyPDF2

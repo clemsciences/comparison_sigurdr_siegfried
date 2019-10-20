@@ -46,8 +46,11 @@ setup(
     license="License :: OSI Approved :: MIT License",
     classifiers=[
         "Programming Language :: Python",
-        # "Programming Language :: Python :: 3",
-        # "Operating System :: OS Independent",
-        # "Private :: Do Not Upload"
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+        "License :: OSI Approved :: MIT License",
+        "Topic :: Text Processing",
+        "Topic :: Text Processing :: Markup :: XML"
+        "Private :: Do Not Upload"
     ],
 )

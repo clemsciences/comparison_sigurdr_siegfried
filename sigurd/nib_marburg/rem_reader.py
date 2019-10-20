@@ -9,8 +9,8 @@ from lxml import etree
 from nltk.tag.tnt import TnT
 from nltk.tag.sequential import UnigramTagger, BigramTagger, TrigramTagger
 
-from sig import PACKDIR
-from sig.nib_marburg.utils import get_data, get_root
+from sigurd import PACKDIR
+from sigurd.nib_marburg.utils import get_data, get_root
 
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]
 

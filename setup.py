@@ -16,7 +16,7 @@ import os
 from setuptools import find_packages, setup
 
 DEPENDENCIES = ["cltk", "requests", "PyPDF2", "gensim", "cltk==0.1.110", "bs4", "lxml"]
-EXCLUDE_FROM_PACKAGES = ["contrib", "docs", "tests*"]
+EXCLUDE_FROM_PACKAGES = []
 CURDIR = os.path.abspath(os.path.dirname(__file__))
 
 with io.open(os.path.join(CURDIR, "README.md"), "r", encoding="utf-8") as f:
@@ -24,20 +24,20 @@ with io.open(os.path.join(CURDIR, "README.md"), "r", encoding="utf-8") as f:
 
 
 setup(
-    name="sig",
-    version="1.0.1",
+    name="sigurd",
+    version="1.0.0",
     author="Clément Besnier",
     author_email="clemsciences@aol.com",
-    description="",
+    description="Code for presentation at Graz, 6th November 2019",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/clemsciences/comparison_sigurdr_siegfried",
     packages=find_packages(exclude=EXCLUDE_FROM_PACKAGES),
     include_package_data=True,
-    keywords=["old-norse", "middle-high-german", "sigfried", "sigurdr"],
+    keywords=["old-norse", "middle-high-german", "siegfried", "sigurdr"],
     scripts=[],
     entry_points={"console_scripts": ["norsecorpus=norsecorpus.main:main"]},
-    zip_safe=False,
+    zip_safe=True,
     install_requires=DEPENDENCIES,
     test_suite="tests.test_project",
     python_requires=">=3.6",

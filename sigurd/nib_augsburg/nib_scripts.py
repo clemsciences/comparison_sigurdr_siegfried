@@ -2,9 +2,9 @@
 
 """
 
-import sig.nib_augsburg.nib_reader as reader
-import sig.nib_augsburg.nib_retrieval as retrieval
-import sig.nib_augsburg.nib_reformat as reformat
+import sigurd.nib_augsburg.nib_reader as reader
+import sigurd.nib_augsburg.nib_retrieval as retrieval
+import sigurd.nib_augsburg.nib_reformat as reformat
 
 
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]

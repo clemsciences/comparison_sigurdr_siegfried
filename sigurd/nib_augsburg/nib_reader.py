@@ -9,8 +9,8 @@ from typing import List
 from lxml import etree
 from bs4 import BeautifulSoup
 
-from sig import PACKDIR
-from sig.nib_augsburg.nib_retrieval import MAIN_LINKS
+from sigurd import PACKDIR
+from sigurd.nib_augsburg.nib_retrieval import MAIN_LINKS
 
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]
 

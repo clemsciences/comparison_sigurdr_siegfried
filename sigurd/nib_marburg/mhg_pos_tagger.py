@@ -12,7 +12,7 @@ import collections
 import pickle
 from lxml import etree
 
-from sig.nib_marburg.utils import get_data, extract_by_tag, extract_annotations
+from sigurd.nib_marburg.utils import get_data, extract_by_tag, extract_annotations
 
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]
 

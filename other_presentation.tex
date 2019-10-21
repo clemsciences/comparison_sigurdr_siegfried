@@ -2,6 +2,8 @@
  
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+%\usepackage{verbatim}
+\usepackage{listings}
  
 %Information to be included in the title page:
 \title{CLTK}
@@ -10,6 +12,21 @@
 \date{06/10/2019}
 
 
+%\lstset{language=TeX}
+
+\AtBeginSection[]
+{
+\begin{frame}{Plan}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\AtBeginSubsection[]
+{
+\begin{frame}{Plan}
+\tableofcontents[currentsubsection]
+\end{frame}
+}
 
 \begin{document}
 
@@ -29,7 +46,7 @@
 \tableofcontents
 \end{frame}
 
-\section{An introduction to CLTK}
+\section{CLTK: philosophy and organization}
 
 % \begin{frame}
 % \frametitle{Brief overview on CLTK}
@@ -43,97 +60,81 @@
 % \end{itemize}
 % \end{frame}
 
-\section{Digital + Classics}
-\begin{frame}{Why introduce digital tools to Humanities}
+\begin{frame}{CLTK}
 \begin{itemize}
-    \item Speeds up the text cleaning and preprocessing stage
-    \item Renders data aggregation/visualization easier
-    \item Promotes interdisciplinarity
-    \item Improves shareability
-\end{itemize}{}
+    \item \underline{Free and Open-Source} \underline{Python} library
+    \pause
+    \item Founded in 2012 by \underline{Kyle P. Johnson}
+    \pause
+    \item Provides \underline{NLP tools} for \underline{historical languages}
+    \pause
+    \item \underline{Shares} a \underline{high-quality code} for \underline{academic research}
     
-\end{frame}
-
-
-
-
-\begin{frame}{Challenges with Digital Classics}
-
-\begin{itemize}
-    \item Resource Scarcity / few tagged corpora
-    \item Licensing problems
-    \item Lack of canonical spelling rules
-    \item No “standard” dialect for most languages
 \end{itemize}{}
     
 \end{frame}{}
 
-
-
+\subsection{NLP Tools}
 \begin{frame}
-\frametitle{Challenges with Digital Classics}
+\frametitle{CLTK among other NLP Tools in Python}
 \begin{itemize}
-    \item Breadth vs Depth: \textit{Have models that are applicable to many dialects with lower accuracy, or accurate yet extremely   specific models?}
-
-    \item Efficiency vs Readability: \textit{Have an easily readable and extendable codebase or focus on algorithmic efficiency?}
-    \item 
+    
+    \item SpaCy\footnote{\href{https://spacy.io/}{https://spacy.io/}}, NLTK\footnote{\href{https://www.nltk.org/}{https://www.nltk.org/}}, StanfordNLP\footnote{\href{https://stanfordnlp.github.io/stanfordnlp/}{https://stanfordnlp.github.io/stanfordnlp/}}
+    \item Python is a programmaing language widely used by researchers
 \end{itemize}
 \end{frame}
 
 
-\section{CLTK: Philosophy and history}
-
+\subsection{Historical Languages}
 
 \begin{frame}
-\frametitle{What is CLTK?}
+\frametitle{Historical Languages}
 \begin{itemize}
-    \item Open-Source Python library
-    \item Founded in 2012 by Kyle P. Johnson
-    \item Academic Advisors:
+    \item Early Antiquity: Sumerian, Akkadian, Old Egyptian, etc
+    \item Late Antiquity: Ancient Greek, Latin, Sanskrit, Classical Chinese, Gothic, Proto-Nordic, etc
+    \item Middle Ages: Medieval Latin, Coranic Arabic, Koine, Old and Middle High German, Old Norse, etc
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Historical Languages}
+\begin{itemize}
+    \item Handles languages that let traces before the Gutenberg's printing  invention
+    \item Documents written in these languages have specific features:   
     \begin{itemize}
-    \item Gregory Crane (Leipzig/Tufts)
-    \item Neil Coffee (Buffalo)
-    \item Peter Meineck (NYU)
-    \item Leonard Muellner (Brandeis/CHS)
+        \item few and likely indirect remaining traces
+        \item spelling not normalized
+        \item dialect boundaries not clearly observable
+        %\item language evolutions must be taken into account
+        \item unavoidable language dynamics  
+        \item no more living speakers
+        \item no more produced texts
+        
     \end{itemize}
+    \item Expert skills needed
 \end{itemize}
 \end{frame}
 
 
-
-
-\begin{frame}
-\frametitle{What is CLTK?}
-\begin{itemize}
-    \item Offers NLP support for Classical Languages
-    \item Attempts to aid academic research
-    \item Common API across all languages
-\end{itemize}
-\end{frame}
-
-
-
-
+\subsection{High Quality Code}
 
 \begin{frame}
-\frametitle{Coding Design Principles}
+\frametitle{Principles}
 \begin{itemize}
     \item Decentralization
     \item Disintermediation
     \item Extensibility
     \item Standardization
     \item Simplicity
-\end{itemize}
+\end{itemize}{}
+    
 \end{frame}
-
-
-
 
 
 \begin{frame}
 \frametitle{Community Design Principles}
 \begin{itemize}
-    \item Free & Open Source
+    \item Free \& Open Source
     \item Transparency
     \item Inclusion
     \item Multi-disciplinary
@@ -142,36 +143,51 @@
 \end{frame}
 
 
-
-
 \begin{frame}
-\frametitle{Goals}
+\frametitle{Free, open-source, decentralized}
 \begin{itemize}
-    \item Compile analysis-friendly corpora
-    \item Collect and generate linguistic data
-    \item Act as a free and open platform for generating scientific research
+    \item Free  %
+    \item MIT license\footnote{\href{https://choosealicense.com/licenses/mit/}{https://choosealicense.com/licenses/mit/}}, you can share and reuse it, even for commercial code
+    \item Inclusion % researchers, like students and passionate people
+    \item Multi-disciplinary % computer science, linguistics, statistics, history
+    %\item Mutual benefit % consequence of the previous remark
 \end{itemize}
 \end{frame}
 
 
-\section{CLTK Features}
 
-
-
-\begin{frame}
-\frametitle{Currently Supported Languages}
-Akkadian, Arabic, Bengali, Chinese, Coptic, Ancient Egyptian, Old English, Middle English, French,
-Middle High German, Middle Low German, Gothic, Greek, Gurajati, Hebrew, Hindi, Javanese,
-Kannada, Latin, Malayalam, Marathi, Old Norse, Odia, Ottoman, Pali, Persian, Old Portuguese,
-Prakrit, Punjabi, Sanskrit, Old Swedish, Tami, Telugu, Tocharian B, Urdu
+\begin{frame}[fragile]
+\frametitle{Academic research}
+    \begin{lstlisting}[basicstyle=\footnotesize]
+    @Misc{johnson2014,
+        author = {Kyle P. Johnson et al.},
+        title = {CLTK: The Classical Language Toolkit},
+        howpublished = {\url{https://github.com/cltk/cltk}},
+        note = {{DOI} 10.5281/zenodo.<current_release_id>},
+        year = {2014--2019},
+    }
+    \end{lstlisting}
+%\begin{itemize}
+%\end{itemize}
 \end{frame}
 
+\section{CLTK - Code and Contribution}
 
+%\begin{frame}
+%\frametitle{Goals}
+%\begin{itemize}
+%    \item Compile analysis-friendly corpora
+%    \item Collect and generate linguistic data
+%\end{itemize}
+%\end{frame}
+
+
+\subsection{Code}
 
 \begin{frame}
 \frametitle{What can CLTK do?}
 \begin{itemize}
-    \item Corpora
+    \item Corpora importing
     \item Text preprocessing
     \begin{itemize}
         \item File Parsing
@@ -189,14 +205,27 @@ Prakrit, Punjabi, Sanskrit, Old Swedish, Tami, Telugu, Tocharian B, Urdu
         \item Poetry Scansion
         \item Named Entity Recognition
     \end{itemize}
-    
+    % Add a schema where we can show some interesting pipelines -> examples for scansion, semantic analysis, etc
 \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}
-\frametitle{Why Open Source?}
+\frametitle{Currently Supported Languages}
+Akkadian, Arabic, Bengali, Chinese, Coptic, Ancient Egyptian, Old English, Middle English, French,
+Middle High German, Middle Low German, Gothic, Greek, Gurajati, Hebrew, Hindi, Javanese,
+Kannada, Latin, Malayalam, Marathi, Old Norse, Odia, Ottoman, Pali, Persian, Old Portuguese,
+Prakrit, Punjabi, Sanskrit, Old Swedish, Tami, Telugu, Tocharian B, Urdu
+\end{frame}
+
+% Add a table with languages and their tools
+
+
+\subsection{Contribution}
+
+\begin{frame}
+\frametitle{Contribution}
 \begin{itemize}
     \item Collaborative effort / open to a virtually infinite talent pool
     \item Avoid “re-inventing the wheel”
@@ -212,9 +241,6 @@ Prakrit, Punjabi, Sanskrit, Old Swedish, Tami, Telugu, Tocharian B, Urdu
 \end{itemize}
 \end{frame}
 
-
-
-
 \begin{frame}
 \frametitle{Why contribute?}
 \begin{itemize}
@@ -224,6 +250,7 @@ Prakrit, Punjabi, Sanskrit, Old Swedish, Tami, Telugu, Tocharian B, Urdu
     \item It’s Fun!
 \end{itemize}
 \end{frame}
+
 
 
 

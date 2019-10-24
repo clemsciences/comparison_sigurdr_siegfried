@@ -4,6 +4,7 @@
 \usepackage{hyperref}
 %\usepackage{verbatim}
 \usepackage{listings}
+\usepackage{graphicx}
  
 %Information to be included in the title page:
 \title{CLTK}
@@ -27,6 +28,11 @@
 \tableofcontents[currentsubsection]
 \end{frame}
 }
+
+
+\newcommand*\rot{\rotatebox{90}}
+
+
 
 \begin{document}
 
@@ -158,6 +164,8 @@
 
 \begin{frame}[fragile]
 \frametitle{Academic research}
+
+    How to cite the project:
     \begin{lstlisting}[basicstyle=\footnotesize]
     @Misc{johnson2014,
         author = {Kyle P. Johnson et al.},
@@ -167,6 +175,7 @@
         year = {2014--2019},
     }
     \end{lstlisting}
+    You can also cite the precise contributors\footnote{\href{https://github.com/cltk/cltk/blob/master/contributors.md}{https://github.com/cltk/cltk/blob/master/contributors.md}} if you use a specific module.
 %\begin{itemize}
 %\end{itemize}
 \end{frame}
@@ -211,13 +220,42 @@
 
 
 
+%\begin{frame}
+%\frametitle{}
+%Akkadian, Arabic, Bengali, Chinese, Coptic, Ancient Egyptian, Old English, Middle English, French,
+%Middle High German, Middle Low German, Gothic, Greek, Gurajati, Hebrew, Hindi, Javanese,
+%Kannada, Latin, Malayalam, Marathi, Old Norse, Odia, Ottoman, Pali, Persian, Old Portuguese,
+%Prakrit, Punjabi, Sanskrit, Old Swedish, Tami, Telugu, Tocharian B, Urdu
+%\end{frame}
+
 \begin{frame}
 \frametitle{Currently Supported Languages}
-Akkadian, Arabic, Bengali, Chinese, Coptic, Ancient Egyptian, Old English, Middle English, French,
-Middle High German, Middle Low German, Gothic, Greek, Gurajati, Hebrew, Hindi, Javanese,
-Kannada, Latin, Malayalam, Marathi, Old Norse, Odia, Ottoman, Pali, Persian, Old Portuguese,
-Prakrit, Punjabi, Sanskrit, Old Swedish, Tami, Telugu, Tocharian B, Urdu
+
+\underline{Corpora}: Bengali, Chinese, Coptic, Egyptian, Gujarati, Hebrew, Javanese, Malayalam, Odia, Old Church Slavonic, Old Swedish, Pali, Persian, Prakrit, Telugu, Tibetan, Urdu
 \end{frame}
+
+\begin{frame}
+\frametitle{}
+
+\begin{table}[]
+\scalebox{0.85}{
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+                   & \rot{Akkadian}   & \rot{Arabic}     & \rot{Hindi}      & \rot{Greek}      & \rot{Latin}      & \rot{Marathi}    & \rot{Middle English} & \rot{Middle High German} & \rot{Middle Low German} & \rot{Old English} & \rot{Old French} & \rot{Old Norse}  & \rot{Punjabi}  & \rot{Sanskrit}  \\ \hline
+Corpora            & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet     & \textbullet         & \textbullet        & \textbullet  & \textbullet & \textbullet & \textbullet & \textbullet \\ \hline
+Stoplist           & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet     & \textbullet         &                   & \textbullet  & \textbullet & \textbullet & \textbullet & \textbullet \\ \hline
+Sentence tokenizer &            &            &            & \textbullet & \textbullet &            &                &                    &                   &             & \textbullet &            &            &            \\ \hline
+Word tokenizer     & \textbullet & \textbullet &            & \textbullet & \textbullet &            & \textbullet     & \textbullet         &                   &             & \textbullet & \textbullet &            & \textbullet \\ \hline
+Stemmer            & \textbullet &            &            &            & \textbullet &            & \textbullet     & \textbullet         &                   &             & \textbullet &            &            & \textbullet \\ \hline
+Lemmatizer         &            &            &            & \textbullet & \textbullet &            & \textbullet     &                    &                   &             & \textbullet &            &            &            \\ \hline
+POS tagger         &            &            &            & \textbullet & \textbullet &            &                & \textbullet         & \textbullet        & \textbullet  &            & \textbullet &            &            \\ \hline
+Prosody tagger     &            &            &            & \textbullet & \textbullet &            &                & \textbullet         &                   &             &            & \textbullet &            &            \\ \hline
+NER                &            &            &            & \textbullet & \textbullet &            &                &                    &                   &             & \textbullet &            &            &            \\ \hline
+\end{tabular}}
+\end{table}
+    
+\end{frame}
+
 
 % Add a table with languages and their tools
 
@@ -257,9 +295,9 @@ Prakrit, Punjabi, Sanskrit, Old Swedish, Tami, Telugu, Tocharian B, Urdu
 \begin{frame}
 \frametitle{How to contribute}
 \begin{itemize}
-    \item You can check out the CLTK tutorials (https://github.com/cltk/tutorials) and docs (http://docs.cltk.org)
-    \item Take a look at the open issues (https://github.com/cltk/cltk/issues) or simply make your own contribution.
-    \item Don’t hesitate to ask for help in the IRC channel (https://gitter.im/cltk/cltk)!
+    \item You can check out the \textbf{CLTK tutorials}\footnote{\href{https://github.com/cltk/tutorials}{https://github.com/cltk/tutorials}} and \textbf{docs}\footnote{\href{http://docs.cltk.org}{http://docs.cltk.org}}
+    \item Take a look at the \textbf{open issues}\footnote{\href{https://github.com/cltk/cltk/issues}{https://github.com/cltk/cltk/issues}} or simply make \textbf{your own contribution}\footnote{\href{https://github.com/cltk/cltk/pulls}{https://github.com/cltk/cltk/pulls}}.
+    \item Don’t hesitate to ask for help in the \textbf{IRC channel}\footnote{\href{https://gitter.im/cltk/cltk}{https://gitter.im/cltk/cltk}}!
 \end{itemize}
 \end{frame}
 
@@ -283,6 +321,8 @@ Prakrit, Punjabi, Sanskrit, Old Swedish, Tami, Telugu, Tocharian B, Urdu
 
 
 \end{frame}
+
+
 
 
 

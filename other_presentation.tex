@@ -68,6 +68,16 @@
 % \end{itemize}
 % \end{frame}
 
+\begin{frame}
+\frametitle{Main goals}
+\begin{itemize}
+\item Compile analysis-friendly corpora
+\item Collect and generate linguistic data
+\item Act as a free and open platform for generating scientific research
+\end{itemize}
+    
+\end{frame}
+
 \begin{frame}{CLTK}
 \begin{itemize}
     \item \underline{Free and Open-Source} \underline{Python} library
@@ -108,12 +118,12 @@
 \begin{frame}
 \frametitle{Historical Languages}
 \begin{itemize}
-    \item Handles languages that let traces before the Gutenberg's printing  invention
+    \item Handles languages written and spoken before Gutenberg
     \item Documents written in these languages have specific features:   
     \begin{itemize}
-        \item few and likely indirect remaining traces
+        \item often relatively small and fragmentary surviving texts
         \item spelling not normalized
-        \item dialect boundaries not clearly observable
+        %\item dialect boundaries not clearly observable
         %\item language evolutions must be taken into account
         \item unavoidable language dynamics  
         \item no more living speakers
@@ -180,7 +190,7 @@
     \end{lstlisting}
     You can also cite the precise contributors\footnote{\href{https://github.com/cltk/cltk/blob/master/contributors.md}{https://github.com/cltk/cltk/blob/master/contributors.md}} if you use a specific module.
     
-    To this day, CLTK has been cited 7 times\footnote{from Google scholar}
+    To this day, CLTK has been cited more than 50 times\footnote{from Google scholar}
 %\begin{itemize}
 %\end{itemize}
 \end{frame}
@@ -208,16 +218,19 @@
         \item Orthographic Normalization
         \item ASCII/Unicode Conversion
         \item Stopword Filtering
-        \item Syllabification
-        \item Syllable/Word Stressing
-        \item Phonetic Indexing
-        \item Word/line Tokenization
-        \item IPA Transcription
-        \item Lemmatization
-        \item Stemming
-        \item POS Tagging
-        \item Poetry Scansion
-        \item Named Entity Recognition
+    \end{itemize}
+    \item Text processing
+    \begin{itemize}
+    \item Syllabification
+    \item Syllable/Word Stressing
+    \item Phonetic Indexing
+    \item Word/line Tokenization
+    \item IPA Transcription
+    \item Lemmatization
+    \item Stemming
+    \item POS Tagging
+    \item Poetry Scansion
+    \item Named Entity Recognition
     \end{itemize}
     % Add a schema where we can show some interesting pipelines -> examples for scansion, semantic analysis, etc
 \end{itemize}
@@ -225,18 +238,10 @@
 
 \begin{frame}
 \frametitle{CLTK as \textbf{b}asic \textbf{la}nguage \textbf{r}esource \textbf{k}it (Krauwer 2003)}
-The \textbf{basic tools} to make \textbf{analysis} and \textbf{automatic tasks} on a language like text summarisation, question answering, machine translation,  
-\begin{center}
-    \includegraphics[scale=0.5]{cltk_pipelines-cltk_pipelines_training.png}    
-\end{center}{}
-
+The \textbf{basic tools} to make \textbf{analysis} and \textbf{automatic tasks} on a language like text summarisation, question answering, machine translation, etc.
 
 \end{frame}
-\begin{frame}{CLTK pipelines}
-\begin{center}
-    \includegraphics[scale=0.5]{cltk_pipelines-cltk_pipelines_executing.png}
-    \end{center}
-\end{frame}
+
 
 
 %\begin{frame}
@@ -255,12 +260,12 @@ The \textbf{basic tools} to make \textbf{analysis} and \textbf{automatic tasks} 
 
 \begin{frame}
 \frametitle{}
-
+\begin{center}
 \begin{table}[]
-\scalebox{0.85}{
+\scalebox{0.80}{
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
-                   & \rot{Akkadian}   & \rot{Arabic}     & \rot{Hindi}      & \rot{Greek}      & \rot{Latin}      & \rot{Marathi}    & \rot{Middle English} & \rot{Middle High German} & \rot{Middle Low German} & \rot{Old English} & \rot{Old French} & \rot{Old Norse}  & \rot{Punjabi}  & \rot{Sanskrit}  \\ \hline
+                   & \rot{\textbf{Akkadian}}   & \rot{Arabic}     & \rot{Hindi}      & \rot{\textbf{Greek}}      & \rot{\textbf{Latin}}      & \rot{Marathi}    & \rot{Middle English} & \rot{\textbf{Middle High German}} & \rot{Middle Low German} & \rot{Old English} & \rot{Old French} & \rot{Old Norse}  & \rot{Punjabi}  & \rot{Sanskrit}  \\ \hline
 Corpora            & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet     & \textbullet         & \textbullet        & \textbullet  & \textbullet & \textbullet & \textbullet & \textbullet \\ \hline
 Stoplist           & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet     & \textbullet         &                   & \textbullet  & \textbullet & \textbullet & \textbullet & \textbullet \\ \hline
 Sentence tokenizer &            &            &            & \textbullet & \textbullet &            &                &                    &                   &             & \textbullet &            &            &            \\ \hline
@@ -272,6 +277,7 @@ Prosody tagger     &            &            &            & \textbullet & \textb
 NER                &            &            &            & \textbullet & \textbullet &            &                &                    &                   &             & \textbullet &            &            &            \\ \hline
 \end{tabular}}
 \end{table}
+\end{center}
     
 \end{frame}
 
@@ -282,6 +288,16 @@ NER                &            &            &            & \textbullet & \textb
 
 \href{https://www.degruyter.com/view/books/9783110599572/9783110599572-010/9783110599572-010.xml}{Building a Text Analysis Pipeline for Classical Languages}
 
+\begin{center}
+    \includegraphics[scale=0.5]{cltk_pipelines-cltk_pipelines_training.png}    
+\end{center}
+
+\end{frame}
+
+\begin{frame}{CLTK pipelines}
+\begin{center}
+    \includegraphics[scale=0.5]{cltk_pipelines-cltk_pipelines_executing.png}
+    \end{center}
 \end{frame}
 
 
@@ -296,17 +312,19 @@ NER                &            &            &            & \textbullet & \textb
     \item Constant patches 
     \begin{itemize}
     \item Bugs are quickly resolved 
-    \item New features are constantly developed)
+    \item New features are constantly developed
+    
+    \end{itemize}
     \item Transparency of development
     \item Generally results in safer software
     \item Easily customizable
-    \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Why contribute?}
 \begin{itemize}
+    \item Best reason: ensure scientific reproducibility of your research
     \item Expand your skill set
     \item Give back to the community
     \item Open Source culture
@@ -355,7 +373,7 @@ See the Patrick's 31st slide .
 
 \begin{frame}
 \begin{center}
-    Thank you for your attention!\footnote{{And we got stickers! \footnotesize}}
+    Thank you for your attention!\footnote{{You can now get stickers! \footnotesize}}
 \end{center}
 
 
@@ -377,7 +395,8 @@ Krauwer, S. 2003. “The Basic Language Resource Kit (BLARK) as the First Milest
 
 \begin{itemize}
 \item Eleftheria
-\item Clément Besnier, clementbesnier.fr, twitter: clemsciences, github: clemsciences
+
+\item Clément Besnier, \href{https://www.clementbesnier.fr}{clementbesnier.fr}, twitter: clemsciences, github: clemsciences
 \end{itemize}
 
 \end{frame}

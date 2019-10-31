@@ -2,7 +2,6 @@
  
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
-%\usepackage{verbatim}
 \usepackage{listings}
 \usepackage{graphicx}
 
@@ -67,30 +66,38 @@
 %     \item number of citations
 % \end{itemize}
 % \end{frame}
+\subsection{Overview}
+
+\begin{frame}{CLTK}
+\begin{itemize}
+    \item \textbf{Free and Open-Source} \textbf{Python} library
+    \pause
+    \item Founded in 2014 by \textbf{Kyle P. Johnson}
+    \pause
+    \item Provides \textbf{NLP\footnote{NLP: Natural Language Processing} tools} for \textbf{historical languages}
+    \pause
+    \item \textbf{Shares} a \textbf{high-quality code} for \textbf{academic research}
+    
+\end{itemize}
+\pause
+Co-maintainers: Patrick J. Burns and Kyle P. Johnson.
+    
+\end{frame}
+
 
 \begin{frame}
-\frametitle{Main goals}
+\frametitle{CLTK}
+Main goals:
 \begin{itemize}
+% add examples of analysis-friendly corpora
 \item Compile analysis-friendly corpora
+% Examples: 
 \item Collect and generate linguistic data
+% Example of papers
 \item Act as a free and open platform for generating scientific research
 \end{itemize}
     
 \end{frame}
-
-\begin{frame}{CLTK}
-\begin{itemize}
-    \item \underline{Free and Open-Source} \underline{Python} library
-    \pause
-    \item Founded in 2014 by \underline{Kyle P. Johnson}
-    \pause
-    \item Provides \underline{NLP tools} for \underline{historical languages}
-    \pause
-    \item \underline{Shares} a \underline{high-quality code} for \underline{academic research}
-    
-\end{itemize}{}
-    
-\end{frame}{}
 
 \subsection{NLP Tools}
 \begin{frame}
@@ -98,7 +105,7 @@
 \begin{itemize}
     
     \item SpaCy\footnote{\href{https://spacy.io/}{https://spacy.io/}}, NLTK\footnote{\href{https://www.nltk.org/}{https://www.nltk.org/}}, StanfordNLP\footnote{\href{https://stanfordnlp.github.io/stanfordnlp/}{https://stanfordnlp.github.io/stanfordnlp/}}
-    \item academic research teams focus on one or related languages and do not often build tools for  
+    \item Academic research teams focus on one or related languages and do not often share tools to the community  
     \item Python is a programming language widely used by researchers
 \end{itemize}
 \end{frame}
@@ -125,7 +132,7 @@
         \item spelling not normalized
         %\item dialect boundaries not clearly observable
         %\item language evolutions must be taken into account
-        \item unavoidable language dynamics  
+        \item diachronic component of languages must be handled
         \item no more living speakers
         \item no more produced texts
         
@@ -237,7 +244,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{CLTK as \textbf{b}asic \textbf{la}nguage \textbf{r}esource \textbf{k}it (Krauwer 2003)}
+\frametitle{CLTK as \textbf{b}asic \textbf{la}nguage \textbf{r}esource \textbf{k}it (Krauwer 2003, p. \ref{paper:krauwer2003})}
 The \textbf{basic tools} to make \textbf{analysis} and \textbf{automatic tasks} on a language like text summarisation, question answering, machine translation, etc.
 
 \end{frame}
@@ -280,13 +287,13 @@ NER                &            &            &            & \textbullet & \textb
 \end{center}
     
 \end{frame}
-
+\subsection{Pipelines}
 
 \begin{frame}
-\frametitle{Basic pipeline}
+\frametitle{Training pipelines}
 
 
-\href{https://www.degruyter.com/view/books/9783110599572/9783110599572-010/9783110599572-010.xml}{Building a Text Analysis Pipeline for Classical Languages}
+\href{https://www.degruyter.com/view/books/9783110599572/9783110599572-010/9783110599572-010.xml}{Building a Text Analysis Pipeline for Classical Languages (Burns 2019, p. \ref{paper:burns2019})} 
 
 \begin{center}
     \includegraphics[scale=0.5]{cltk_pipelines-cltk_pipelines_training.png}    
@@ -299,6 +306,17 @@ NER                &            &            &            & \textbullet & \textb
     \includegraphics[scale=0.5]{cltk_pipelines-cltk_pipelines_executing.png}
     \end{center}
 \end{frame}
+
+% Generated with https://www.draw.io/
+
+
+%\begin{frame}
+%\begin{lstlisting}
+
+%\end{lstlisting}
+
+
+%\end{frame}
 
 
 \subsection{Contribution}
@@ -345,10 +363,24 @@ NER                &            &            &            & \textbullet & \textb
 \end{frame}
 
 \begin{frame}
-\frametitle{CLTK GSoC Projects}
+\frametitle{Contribute with GSOC}
 %See the 32nd slide
-
+\begin{itemize}
+    \item Open for all university students
+    \itemYou can work on an open source project for the summer
+    \item CLTK participated for 3 years (2016, 2017, 2018)
+\end{itemize}
 Eleftheria, you can talk about your experience here.
+\end{frame}
+
+\begin{frame}
+\frametitle{Previous GSOC Projects}
+\begin{itemize}
+    \item Additional support Akkadian, Germanic languages, Old and Middle French
+    \item Greek/Latin Backoff lemmatize.
+    \item Support of more synonyms, translations and word embeddings for Greek and Latin
+    \item Annotation support for the CLTK Archive
+\end{itemize}
 \end{frame}
 
 
@@ -385,7 +417,11 @@ See the Patrick's 31st slide .
 \begin{frame}
 
 \frametitle{Bibliography}
-Krauwer, S. 2003. “The Basic Language Resource Kit (BLARK) as the First Milestone for the Language Resources Roadmap.” Proceedings of the 2003 International Workshop on Speech and Computer (SPECOM 2003) : 8-15; cf. also Passarotti in SALTMIL 2010: 29.
+\begin{itemize}
+    \item \label{paper:krauwer2003} Krauwer, S. 2003. “The Basic Language Resource Kit (BLARK) as the First Milestone for the Language Resources Roadmap.” Proceedings of the 2003 International Workshop on Speech and Computer (SPECOM 2003) : 8-15; cf. also Passarotti in SALTMIL 2010: 29.
+    \item \label{paper:burns2019} Building a Text Analysis Pipeline for Classical Languages, https://www.degruyter.com/view/books/9783110599572/9783110599572-010/9783110599572-010.xml
+\end{itemize}{}
+
 
 \end{frame}
 

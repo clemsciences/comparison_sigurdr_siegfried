@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/clemsciences/comparison_sigurdr_siegfried.git/master)
+
 # Nibelungenlied and Völsunga saga
 
 Comparison between *Nibelungenlied* and *Völsunga saga*

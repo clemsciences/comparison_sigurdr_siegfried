@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/clemsciences/comparison_sigurdr_siegfried.git/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/clemsciences/comparison_sigurdr_siegfried.git/master) ![PyPI](https://img.shields.io/pypi/v/sigurd)
 
 # Nibelungenlied and Völsunga saga
 

@@ -23,7 +23,7 @@ parser = etree.XMLParser(load_dtd=True, no_network=False)
 
 def read_text_from_filename(filename):
     root = get_root(filename, parser)
-    return read_text_from_filename(root)
+    return read_text_from_root(root)
 
 
 def read_text_from_root(root):

@@ -3,7 +3,7 @@ requests
 # pdfminer.six
 PyPDF2
 gensim
-cltk==0.1.110
+cltk==0.1.112
 bs4
 lxml
 norsecorpus==1.0.2

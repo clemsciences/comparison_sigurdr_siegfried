@@ -51,6 +51,5 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Topic :: Text Processing",
         "Topic :: Text Processing :: Markup :: XML"
-        "Private :: Do Not Upload"
     ],
 )

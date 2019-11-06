@@ -16,12 +16,12 @@
 
 %\lstset{language=TeX}
 
-\AtBeginSection[]
-{
-\begin{frame}{Plan}
-\tableofcontents[currentsection]
-\end{frame}
-}
+%\AtBeginSection[]
+%{
+%\begin{frame}{Plan}
+%\tableofcontents[currentsection]
+%\end{frame}
+%}
 
 \AtBeginSubsection[]
 {
@@ -33,14 +33,18 @@
 
 \newcommand*\rot{\rotatebox{90}}
 
-
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,  
+    urlcolor=cyan,
+}
 
 \begin{document}
 
 \begin{frame}
 %\titlepage
 \begin{center}
-    {\large Introduction to CLTK}\\
+    {\large Introduction to CLTK (Classical Language ToolKit)}\\
     Eleftheria Chatziargyriou \& Clément Besnier \\
     06/11/2019 \\
     \includegraphics[scale=0.5]{cltklogo.png}
@@ -90,11 +94,12 @@ Co-maintainers: Patrick J. Burns and Kyle P. Johnson.
 Main goals:
 \begin{itemize}
 % add examples of analysis-friendly corpora
-\item Compile analysis-friendly corpora
+\item[1.] Compile analysis-friendly corpora
 % Examples: 
-\item Collect and generate linguistic data
+\item[2.] Collect and generate linguistic data\footnote{\href{https://github.com/cltk/latin_models_cltk}{https://github.com/cltk/latin\_models\_cltk}}
 % Example of papers
-\item Act as a free and open platform for generating scientific research
+\item[3.] Act as a free and open platform for generating scientific research
+
 \end{itemize}
     
 \end{frame}
@@ -104,8 +109,8 @@ Main goals:
 \frametitle{CLTK among other NLP Tools in Python}
 \begin{itemize}
     
-    \item SpaCy\footnote{\href{https://spacy.io/}{https://spacy.io/}}, NLTK\footnote{\href{https://www.nltk.org/}{https://www.nltk.org/}}, StanfordNLP\footnote{\href{https://stanfordnlp.github.io/stanfordnlp/}{https://stanfordnlp.github.io/stanfordnlp/}}
-    \item Academic research teams focus on one or related languages and do not often share tools to the community  
+    \item NLP: SpaCy\footnote{\href{https://spacy.io/}{https://spacy.io/}}, NLTK\footnote{\href{https://www.nltk.org/}{https://www.nltk.org/}}, StanfordNLP\footnote{\href{https://stanfordnlp.github.io/stanfordnlp/}{https://stanfordnlp.github.io/stanfordnlp/}}
+    %\item Academic research teams focus on one or related languages and do not often share tools to the community  
     \item Python is a programming language widely used by researchers
 \end{itemize}
 \end{frame}
@@ -117,7 +122,7 @@ Main goals:
 \frametitle{Historical Languages}
 \begin{itemize}
     \item Early Antiquity: Sumerian, Akkadian, Old Egyptian, etc
-    \item Late Antiquity: Ancient Greek, Latin, Sanskrit, Classical Chinese, Gothic, Proto-Nordic, etc
+    \item Late Antiquity: Ancient Greek, Latin, Sanskrit, Classical Chinese, Gothic, etc
     \item Middle Ages: Medieval Latin, Coranic Arabic, Koine, Old and Middle High German, Old Norse, etc
 \end{itemize}
 \end{frame}
@@ -135,7 +140,6 @@ Main goals:
         \item diachronic component of languages must be handled
         \item no more living speakers
         \item no more produced texts
-        
     \end{itemize}
     \item Expert skills needed
 \end{itemize}
@@ -160,7 +164,7 @@ Main goals:
 \begin{frame}
 \frametitle{Community Design Principles}
 \begin{itemize}
-    \item Free \& Open Source
+    %\item Free \& Open Source
     \item Transparency
     \item Inclusion
     \item Multi-disciplinary
@@ -170,7 +174,7 @@ Main goals:
 
 
 \begin{frame}
-\frametitle{Free, open-source, decentralized}
+\frametitle{Free, open-source}
 \begin{itemize}
     \item Free  %
     \item MIT license\footnote{\href{https://choosealicense.com/licenses/mit/}{https://choosealicense.com/licenses/mit/}}, you can share and reuse it, even for commercial code
@@ -370,14 +374,13 @@ NER                &            &            &            & \textbullet & \textb
     \itemYou can work on an open source project for the summer
     \item CLTK participated for 3 years (2016, 2017, 2018)
 \end{itemize}
-Eleftheria, you can talk about your experience here.
 \end{frame}
 
 \begin{frame}
 \frametitle{Previous GSOC Projects}
 \begin{itemize}
     \item Additional support Akkadian, Germanic languages, Old and Middle French
-    \item Greek/Latin Backoff lemmatize.
+    \item Greek/Latin Backoff lemmatizers.
     \item Support of more synonyms, translations and word embeddings for Greek and Latin
     \item Annotation support for the CLTK Archive
 \end{itemize}
@@ -386,9 +389,16 @@ Eleftheria, you can talk about your experience here.
 
 \begin{frame}
 \frametitle{CLTK Stats}
+\begin{itemize}
+\item Hosted by Github \href{https://github.com/cltk/cltk}{https://github.com/cltk/cltk}
+\item 2723 commits
+\item 83 contributors
+\item 73 watchers, 560 stars, 283 forks
+\item 45 releases, current version 0.1.112
+\item Code coverage 89%
+\end{itemize}
 
-%should it be added?
-See the Patrick's 31st slide .
+
 \end{frame}
 
 
@@ -430,11 +440,18 @@ See the Patrick's 31st slide .
 \frametitle{Contact us}
 
 \begin{itemize}
-\item Eleftheria
+\item Eleftheria Chatziargyriou, email address: \href{mailto:ele.hatzy@gmail.com}{ele.hatzy@gmail.com}, Github: \href{https://github.com/Sedictious}{Sedictious}
 
-\item Clément Besnier, \href{https://www.clementbesnier.fr}{clementbesnier.fr}, twitter: clemsciences, github: clemsciences
+\item Clément Besnier, email address: \href{mailto:clemsciences@aol.com}{clemsciences@aol.com}, personal website: \href{https://www.clementbesnier.fr}{clementbesnier.fr}, Twitter: \href{https://twitter.com/clemsciences}{clemsciences}, Github: \href{https://github.com/clemsciences}{clemsciences}
 \end{itemize}
 
+\end{frame}
+
+
+\begin{frame}
+\nocite{*}
+\bibliographystyle{amsalpha}
+\bibliography{cltk.bib}
 \end{frame}
 
 

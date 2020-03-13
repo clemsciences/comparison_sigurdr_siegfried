@@ -6,6 +6,8 @@ Comparison between *Nibelungenlied* and *Völsunga saga*
 
 The name of the package is **sigurd**.
 
+Slides and code are available at [www.clementbesnier.fr/projets/cltk_2019_graz](https://www.clementbesnier.fr/projets/cltk_2019_graz).
+
 ## Download and Installation
 
 ```bash

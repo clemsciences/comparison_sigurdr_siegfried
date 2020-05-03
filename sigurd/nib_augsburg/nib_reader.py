@@ -91,18 +91,55 @@ def read_tei(main_link):
     return segments
 
 
-def read_places():
-    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "places.txt"), encoding="utf-8") as f:
-        lines = f.read().strip().split(os.linesep)
+def read_annotations(lines):
+    correct_lines = [line.split(":") for line in lines if len(line) > 0 and not line.startswith("#")]
+    formatted_lines = {place[0]: [p for p in place[1].split(" ") if p] for place in correct_lines if len(place) == 2}
+    return formatted_lines
 
-    places = [line.split(":") for line in lines if len(line) > 0 and not line.startswith("#")]
-    places = {place[0]: [p for p in place[1].split(" ") if p] for place in places if len(place) == 2}
-    return places
+
+def read_peoples():
+    """
+    >>> read_peoples()['Hunnen']
+    ['Hunin', 'Hunen']
+
+    :return:
+    """
+    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "peoples.txt"), encoding="utf-8") as f:
+        lines = f.read().strip().split(os.linesep)
+    return read_annotations(lines)
+
+
+def read_regions_and_countries():
+    """
+    >>> read_regions_and_countries()['Island']
+    ['Islande']
+
+    :return:
+    """
+    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "regions_and_countries.txt"), encoding="utf-8") as f:
+        lines = f.read().strip().split(os.linesep)
+    return read_annotations(lines)
+
+
+def read_rivers():
+    """
+    >>> read_rivers()['Rhein']
+    ['Rin', 'Rine']
+
+    :return:
+    """
+    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "rivers.txt"), encoding="utf-8") as f:
+        lines = f.read().strip().split(os.linesep)
+    return read_annotations(lines)
 
 
 def read_names():
+    """
+    >>> read_names()['Siegfried']
+    ['Sivrit', 'Sifrit', 'Sivriden', 'Sivride', 'Sivrides']
+
+    :return:
+    """
     with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "names.txt"), encoding="utf-8") as f:
         lines = f.read().strip().split(os.linesep)
-    names = [line.split(":") for line in lines if len(line) > 0 and not line.startswith("#")]
-    names = {name[0]: [n.strip() for n in name[1].split(" ") if n] for name in names if len(name) == 2}
-    return names
+    return read_annotations(lines)

@@ -1,63 +1,40 @@
 Alzey: Alzeye
 Arras: Arraz
 Azagouc: Azagovch
-
 Bechelaren: Bechlarn Bechelaren
 Bern: Berne Bernære
-
-
 Eferding: Everdingen
 Enns: Ense
 Etzelburg:
-
 Gran: Gran
-
 Hainburg: Heimburch
-
-
-Inn: Irn?
+Inn: Irn
 Isenstein: Isenstein Isensteine
 Kiew:
-
-
-Lochheim: Lorse?
-
-
-
+Lochheim: Lorse
 Mautern:
 Mehring: Moringe
 Meisenburg:
 Melk: Medeliche
 Metz: Metzzen Mezzen Mezzin Metzen
-
 Ninnive: Ninnive
-
-
 Passau: Pazzowe
 Petschenegen: Petschenaere Pescenære
 Pförring: Vergen
-
-
 Schwalbfeld:
 Spessart: Spehtsharte
-
 Traisen: Treysem Treysenmvore
 Traun: Trvone
 Tronje: Tronege Tronge Trong Trongen
 Tronjer: Tronegære
 Tulln: Tvlme
-
 Wärbel: Werbel
 Walachen: Vlachen
 Waskenstein:
 Waskenwald:
-
 Wien: Wiene
 Wittich: Witege
 Worms: Wormze Wormez Wormeze Wormz
-
 Xanten: Santen
-
-
 Zazamanc: Zazamanc
 Zeiselmauer:

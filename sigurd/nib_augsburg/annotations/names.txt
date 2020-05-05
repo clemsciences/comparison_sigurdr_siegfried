@@ -1,25 +1,19 @@
-# Namenverzeichnis
-
 Alberich: Albriche Albrichæ Albrich Albrichen Albriches
 Aldrian: Adrianes Adrian Adrianen Adrians
 Alzey: Alzeye
 Amelrich: Amelrinch Amelreichen
 Amelungen: Amelunge
 Astold: Astolt
-
 Balmung: Balmvngen
 Bechelaren: Bechlarn Bechelaren
 Blödel: Bloedelin Bloedelines Bloedelinen Bloedeline
 Botelung: Botelunges
 Brünhild: Prvnh' Prvenhilde Privnhilde Prvnhilt Prvonhilde Prvnhilde Prunhilt Prunhilde
-
 Dankwart: Danckwart
 Dietrich: Dietriche Dietrich Dietrichen Dietriches
-
 Eckewart: Eckewart
 Else: Else Elsen
 Etzel: Etzelen Etzeln Etzel
-
 Gelfrat: Gelpfrat Gelpfrade Gelpfrades Gelpfrate Gelpfrates Gelpfrads
 Gerbart: Gerbart
 Gere: Gere Geren
@@ -28,75 +22,46 @@ Gibech: Gibeche Gibechen
 Giselher: Giselhere Giselheres Giselher Giselhers Giselhern
 Gotelind: Gotelinde
 Gunther: Gunther Gunthere Gunthers Guntheres Gunthern
-
 Hadeburg: Haderburg
 Hagen: Hagen Hagene Hagenen
-
 Hawart: Hawart Hawartes
 Helche: Helche Helchen
 Helfrich: Helpfrich Helpfriche Helpfrichen
 Helmnot: Helmnot
 Herrat: Herrat
-
 Hildebrand: Hildebrand Hildebrande Hildebrant Hildebrandes Hildebranden
 Hildegund: Hiltegunde
 Hornboge: Hornboge
 Hunold: Hunolt
-
 Iring: Irinch Iringe Iringen Iringin
 Irnfried: Irnfrit
-
 Kriemhild: Kriemehilden Chriemhilt Chriemhilde Chriemh'
-
 Liudegast: Livdegast Lvdegast Livdegaste
 Liudeger: Livdeger Livdegeres Livdegere Livdegeren
-
 Näntwin: Næntwines
 Nibelung: Nibelunc Nibelunge Nibelunges Nibelungn
-
 Nudung: Nuodunc Nvdvnges
-
 Ortlieb: Ortlieben Ortliebes Ortliebe
 Ortwin: Ortwin Ortwine Ortwinen
-
-
 Pilgrim: Pilgerin, Pilgerim
-
 Ramung: Ramunch
-
-
 Ritschart: Rischart
 Rüdiger:  Rudeger Rudegeres Rvdegeres Rvdegere Rvdeger Rvdegern Rvdegeren Rvdegere Rvdegeres
 Rumold: Rvmolt
-
-
 Schilbung: Schilbunc
-Schrutan: ?
-
+Schrutan:
 Siegestab: Sigestap
 Siegfried: Sivrit Sifrit Sivriden Sivride Sivrides
 Sieglinde: Sigelint Sigelinde
 Siegmund: Sigemvnt Sigemundes Sigemunt Sigemundes Sigemvont Sigemunden
 Sindold: Sindolt
-
 Speyer: Speier
 Swemmel:
-
-
-Ute: Uten? Vte Vten Voten Vote
-
+Ute: Uten Vte Vten Voten Vote
 Volker: Volker
-
-
 Walther: Walther
 Waske: Wasechen
 Wichart: Wichart
 Wolfbrand: Wolfprant Wolfpranden
 Wolfhart: Wolfharten Wolfhart Wolfhartes Wolfharte
 Wolfwin:
-
-
-
-
-
-

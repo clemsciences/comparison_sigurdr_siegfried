@@ -1,9 +1,5 @@
-Donau: Tvonowe Tunawe Tverne?
-
+Donau: Tvonowe Tunawe Tverne
 Elbe: Elbe
-
 Main: Mein
-
 Rhein: Rin Rine
-
 Rhone: Roten

@@ -185,4 +185,4 @@ def find_occurrences_in_text(text: List[List[List[str]]],
             for j, line in enumerate(chapter)
             for k, half_line in enumerate(line)
             for l, token in enumerate(half_line.split(" "))
-            if token.lower() in researched_tokens]
+            if token in researched_tokens]

@@ -7,7 +7,7 @@ import sigurd.nib_augsburg.nib_retrieval as retrieval
 import sigurd.nib_augsburg.nib_reformat as reformat
 
 
-__author__ = ["Clément Besnier <clemsciences@aol.com>", ]
+__author__ = ["Clément Besnier <clem@clementbesnier.fr>", ]
 
 
 def get_nib_html():

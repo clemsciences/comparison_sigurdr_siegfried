@@ -14,7 +14,7 @@ from lxml import etree
 
 from sigurd.nib_marburg.utils import get_data, extract_by_tag, extract_annotations
 
-__author__ = ["Clément Besnier <clemsciences@aol.com>", ]
+__author__ = ["Clément Besnier <clem@clementbesnier.fr>", ]
 
 
 DATA_DIRECTORY = "rem-corralled-20161222"

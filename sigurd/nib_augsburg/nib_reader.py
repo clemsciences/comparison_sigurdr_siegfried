@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from sigurd import PACKDIR
 from sigurd.nib_augsburg.nib_retrieval import MAIN_LINKS
 
-__author__ = ["Clément Besnier <clemsciences@aol.com>", ]
+__author__ = ["Clément Besnier <clem@clementbesnier.fr>", ]
 
 nib_directories = ["nib_a_00", "nib_b_00", "nib_c_00", "nib_n_00"]
 

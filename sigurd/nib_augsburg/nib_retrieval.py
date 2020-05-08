@@ -16,7 +16,7 @@ MAIN_LINKS = [
 
 n_pages = 39
 
-__author__ = ["Clément Besnier <clemsciences@aol.com>", ]
+__author__ = ["Clément Besnier <clem@clementbesnier.fr>", ]
 
 
 def int_to_string(i: int):

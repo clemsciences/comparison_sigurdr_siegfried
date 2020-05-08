@@ -12,7 +12,7 @@ from nltk.tag.sequential import UnigramTagger, BigramTagger, TrigramTagger
 from sigurd import PACKDIR
 from sigurd.nib_marburg.utils import get_data, get_root
 
-__author__ = ["Clément Besnier <clemsciences@aol.com>", ]
+__author__ = ["Clément Besnier <clem@clementbesnier.fr>", ]
 
 DATA_DIRECTORY = "rem-corralled-20161222"
 PREPROCESSED_DIRECTORY = "rem-preprocessing"

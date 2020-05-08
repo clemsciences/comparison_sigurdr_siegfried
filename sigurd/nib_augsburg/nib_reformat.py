@@ -7,7 +7,7 @@ import codecs
 from typing import List
 
 
-__author__ = ["Clément Besnier <clemsciences@aol.com>", ]
+__author__ = ["Clément Besnier <clem@clementbesnier.fr>", ]
 
 nib_directories = ["nib_a_00", "nib_b_00", "nib_c_00", "nib_n_00"]
 

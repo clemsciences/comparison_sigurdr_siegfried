@@ -15,7 +15,8 @@ import re
 import os
 from setuptools import find_packages, setup
 
-DEPENDENCIES = ["cltk", "requests", "PyPDF2", "gensim", "cltk==0.1.110", "bs4", "lxml"]
+DEPENDENCIES = ["cltk", "requests", "PyPDF2", "gensim", "cltk==0.1.110", "bs4",
+                "lxml"]
 EXCLUDE_FROM_PACKAGES = []
 CURDIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -27,7 +28,7 @@ setup(
     name="sigurd",
     version="1.2.0",
     author="Clément Besnier",
-    author_email="clemsciences@aol.com",
+    author_email="clem@clementbesnier.fr",
     description="Code for presentation at Graz, 6th November 2019",
     long_description=README,
     long_description_content_type="text/markdown",

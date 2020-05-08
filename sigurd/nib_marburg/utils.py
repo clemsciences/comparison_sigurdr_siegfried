@@ -5,7 +5,7 @@
 import os
 from lxml import etree
 
-__author__ = ["Clément Besnier <clemsciences@aol.com>", ]
+__author__ = ["Clément Besnier <clem@clementbesnier.fr>", ]
 
 
 def extract_annotations(entry):

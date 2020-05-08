@@ -14,13 +14,17 @@ Slides and code are available at [www.clementbesnier.fr/projets/cltk_2019_graz](
 $ pip install sigurd
 ```
 
-# Origins of the data
-* For Old Norse texts: https://github.com/clemsciences/old_norse_corpus and ultimagtely https://heimskringla.no/wiki/Main_Page
+## Origins of the data
+## Völsunga saga
+
+For Old Norse texts: https://github.com/clemsciences/old_norse_corpus and ultimately https://heimskringla.no/wiki/Main_Page.
 
 ### Referenzkorpus Mittelhochdeutsch
 
 #### Source and license
 [Main page of the project](https://www.linguistics.rub.de/rem/access/index.html)
+
+> Klein, Thomas; Wegera, Klaus-Peter; Dipper, Stefanie; Wich-Reif, Claudia (2016). Referenzkorpus Mittelhochdeutsch (1050–1350), Version 1.0, https://www.linguistics.ruhr-uni-bochum.de/rem/. ISLRN 332-536-136-099-5.
 
 License: 
 
@@ -35,3 +39,4 @@ No change is made on the corpus. This code is intended to parse the corpus.
 3. Click on "Herunterladen".
 4. Uncompress the dowloaded file.
 5. You have a folder, named **rem-corraled-20161222** (2019-09-18) with a list of XML files which are annotated texts.
+

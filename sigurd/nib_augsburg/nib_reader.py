@@ -173,14 +173,15 @@ def find_occurrences_in_text(text: List[List[List[str]]],
     Each occurrence has the following format: <chapter>-<line>-<half-line>-<word>.
 
     >>> text = read_tei(MAIN_LINKS[0])
-    >>> researched_tokens = read_names()["Siegfried"]
+    >>> researched_tokens = read_rivers()["Rhone"]
     >>> find_occurrences_in_text(text, researched_tokens)
+    ['31-410-1-2']
 
     :param text: A text is composed of chapters. A chapter is composed of lines. A line is composed of 2 half lines. A half line is a string.
     :param researched_tokens: list of tokens to be searched in the text.
     :return: list of positions in the text
     """
-    researched_tokens = [token.lower() for token in researched_tokens]
+    researched_tokens = [token for token in researched_tokens]
     return [f"{i+1}-{j+1}-{k+1}-{l+1}" for i, chapter in enumerate(text)
             for j, line in enumerate(chapter)
             for k, half_line in enumerate(line)

@@ -33,7 +33,7 @@ def extract_text_from_html(main_links: List[str]) -> dict:
         directory = main_link.split("/")[-1].split(".")[0]
         retrieved_texts[main_link] = []
         for i in range(len(os.listdir(directory))):
-            filename = os.path.join(directory, str(i)+".html")
+            filename = os.path.join(directory, str(i) + ".html")
             with open(filename, "r") as f:
                 text = f.read()
                 tree = BeautifulSoup(text, "lxml")
@@ -69,8 +69,9 @@ def get_xml_root(main_link):
     :return:
     """
     parser = etree.XMLParser(load_dtd=True, no_network=False)
-    filename = main_link.split("/")[-1].split(".")[0][:-3]+".xml"
-    tree = etree.parse(os.path.join(PACKDIR, "nib_augsburg", filename), parser=parser)
+    filename = main_link.split("/")[-1].split(".")[0][:-3] + ".xml"
+    tree = etree.parse(os.path.join(PACKDIR, "nib_augsburg", filename),
+                       parser=parser)
     return tree.getroot()
 
 
@@ -92,8 +93,10 @@ def read_tei(main_link):
 
 
 def read_annotations(lines):
-    correct_lines = [line.split(":") for line in lines if len(line) > 0 and not line.startswith("#")]
-    formatted_lines = {place[0]: [p for p in place[1].split(" ") if p] for place in correct_lines if len(place) == 2}
+    correct_lines = [line.split(":") for line in lines
+                     if len(line) > 0 and not line.startswith("#")]
+    formatted_lines = {place[0]: [p for p in place[1].split(" ") if p]
+                       for place in correct_lines if len(place) == 2}
     return formatted_lines
 
 
@@ -104,7 +107,8 @@ def read_peoples():
 
     :return:
     """
-    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "peoples.txt"), encoding="utf-8") as f:
+    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "peoples.txt"),
+                     encoding="utf-8") as f:
         lines = f.read().strip().split(os.linesep)
     return read_annotations(lines)
 
@@ -116,7 +120,8 @@ def read_regions_and_countries():
 
     :return:
     """
-    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "regions_and_countries.txt"), encoding="utf-8") as f:
+    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "regions_and_countries.txt"),
+                     encoding="utf-8") as f:
         lines = f.read().strip().split(os.linesep)
     return read_annotations(lines)
 
@@ -128,7 +133,21 @@ def read_rivers():
 
     :return:
     """
-    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "rivers.txt"), encoding="utf-8") as f:
+    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "rivers.txt"),
+                     encoding="utf-8") as f:
+        lines = f.read().strip().split(os.linesep)
+    return read_annotations(lines)
+
+
+def read_cities():
+    """
+    >>> read_cities()['Metz']
+    ['Metzzen', 'Mezzen', 'Mezzin', 'Metzen']
+
+    :return:
+    """
+    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "cities.txt"),
+                     encoding="utf-8") as f:
         lines = f.read().strip().split(os.linesep)
     return read_annotations(lines)
 
@@ -140,6 +159,30 @@ def read_names():
 
     :return:
     """
-    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "names.txt"), encoding="utf-8") as f:
+    with codecs.open(os.path.join(PACKDIR, "nib_augsburg", "annotations", "names.txt"),
+                     encoding="utf-8") as f:
         lines = f.read().strip().split(os.linesep)
     return read_annotations(lines)
+
+
+def find_occurrences_in_text(text: List[List[List[str]]],
+                             researched_tokens: List[str]) -> List[str]:
+    """
+    Find occurrences of given tokens in a given text.
+
+    Each occurrence has the following format: <chapter>-<line>-<half-line>-<word>.
+
+    >>> text = read_tei(MAIN_LINKS[0])
+    >>> researched_tokens = read_names()["Siegfried"]
+    >>> find_occurrences_in_text(text, researched_tokens)
+
+    :param text: A text is composed of chapters. A chapter is composed of lines. A line is composed of 2 half lines. A half line is a string.
+    :param researched_tokens: list of tokens to be searched in the text.
+    :return: list of positions in the text
+    """
+    researched_tokens = [token.lower() for token in researched_tokens]
+    return [f"{i+1}-{j+1}-{k+1}-{l+1}" for i, chapter in enumerate(text)
+            for j, line in enumerate(chapter)
+            for k, half_line in enumerate(line)
+            for l, token in enumerate(half_line.split(" "))
+            if token.lower() in researched_tokens]

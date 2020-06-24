@@ -57,9 +57,13 @@ def get_nib_tei_semgents():
     print(text)
 
 
-if __name__ == "__main__":
-    get_nib_html()
+def extract_tei_from_html():
+    # get_nib_html()
     get_nib_txt()
     get_nib_tei()
     get_nib_tei_group_annotations()
     get_nib_tei_semgents()
+
+
+if __name__ == "__main__":
+    extract_tei_from_html()

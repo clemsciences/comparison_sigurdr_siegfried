@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 
 from sigurd import PACKDIR
 from sigurd.nib_augsburg.nib_retrieval import MAIN_LINKS
+from sigurd.nib_augsburg import nib_scripts
 
 __author__ = ["Clément Besnier <clem@clementbesnier.fr>", ]
 
@@ -23,7 +24,11 @@ def extract_text_from_html(main_links: List[str]) -> dict:
     """
     From HTML files to TXT files
 
-    >>> extract_text_from_html(MAIN_LINKS)
+    >>> texts = extract_text_from_html(MAIN_LINKS)
+    >>> len(texts)
+    4
+    >>> len(texts[MAIN_LINKS[0]])
+    48
 
     :param main_links:
     :return:
@@ -52,6 +57,8 @@ def read_txt(main_link: str) -> List:
     """
     retrieved_texts = []
     directory = "extracted_" + main_link.split("/")[-1].split(".")[0][:-3]
+    if os.path.exists(directory):
+        nib_scripts.extract_tei_from_html()
     for i in range(1, len(os.listdir(directory))):
         filename = os.path.join(directory, str(i) + ".txt")
         with codecs.open(filename, "r", encoding="utf-8") as f:

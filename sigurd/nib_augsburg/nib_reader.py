@@ -57,7 +57,7 @@ def read_txt(main_link: str) -> List:
     """
     retrieved_texts = []
     directory = "extracted_" + main_link.split("/")[-1].split(".")[0][:-3]
-    if os.path.exists(directory):
+    if not os.path.exists(directory):
         nib_scripts.extract_tei_from_html()
     for i in range(1, len(os.listdir(directory))):
         filename = os.path.join(directory, str(i) + ".txt")

@@ -35,7 +35,7 @@ def extract_text_from_html(main_links: List[str]) -> dict:
     """
     retrieved_texts = {}
     for main_link in main_links:
-        directory = main_link.split("/")[-1].split(".")[0]
+        directory = os.path.join(PACKDIR, "nib_augsburg", main_link.split("/")[-1].split(".")[0])
         retrieved_texts[main_link] = []
         for i in range(len(os.listdir(directory))):
             filename = os.path.join(directory, str(i) + ".html")
@@ -56,7 +56,7 @@ def read_txt(main_link: str) -> List:
     :return:
     """
     retrieved_texts = []
-    directory = "extracted_" + main_link.split("/")[-1].split(".")[0][:-3]
+    directory = os.path.join(PACKDIR, "nib_augsburg", "extracted_" + main_link.split("/")[-1].split(".")[0][:-3])
     if not os.path.exists(directory):
         nib_scripts.extract_tei_from_html()
     for i in range(1, len(os.listdir(directory))):

@@ -13,3 +13,4 @@ matplotlib
 pprint
 numpy
 scikit-learn
+pytest

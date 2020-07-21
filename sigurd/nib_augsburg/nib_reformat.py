@@ -19,7 +19,7 @@ def extract_text(html_text) -> List[List[str]]:
     :return:
     """
     lines = [i.text.replace("\xa0", "") for i in html_text.find("div", attrs={"class": "contentus"}).findAll("h3")]
-    return [line.split("  ") for line in lines]
+    return [line.split("  ") for line in lines if line]
 
 
 def save_txt_reformat(main_links: List[str], retrieved_texts: dict):

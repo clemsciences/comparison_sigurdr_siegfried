@@ -25,6 +25,8 @@ def get_nib_txt():
     """
     2
 
+    >>> get_nib_txt()
+
     :return:
     """
     retrieved_nib = reader.extract_text_from_html(retrieval.MAIN_LINKS)
@@ -63,6 +65,7 @@ def extract_tei_from_html():
     get_nib_tei()
     get_nib_tei_group_annotations()
     get_nib_tei_semgents()
+    # reformat.save_tei_reformat(retrieval.MAIN_LINKS, )
 
 
 if __name__ == "__main__":

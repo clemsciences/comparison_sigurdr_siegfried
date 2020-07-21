@@ -27,7 +27,7 @@ def extract_text_from_html(main_links: List[str]) -> dict:
     >>> len(texts)
     4
     >>> len(texts[MAIN_LINKS[0]])
-    48
+    39
 
     :param main_links:
     :return:
@@ -36,7 +36,7 @@ def extract_text_from_html(main_links: List[str]) -> dict:
     for main_link in main_links:
         directory = os.path.join(PACKDIR, "nib_augsburg", main_link.split("/")[-1].split(".")[0])
         retrieved_texts[main_link] = []
-        for i in range(len(os.listdir(directory))):
+        for i in range(1, len(os.listdir(directory))):
             filename = os.path.join(directory, str(i) + ".html")
             with open(filename, "r") as f:
                 text = f.read()
@@ -49,7 +49,7 @@ def read_txt(main_link: str) -> List:
     """
     TXT files to str
 
-    >>> read_txt(MAIN_LINKS[0])
+    >>> len(read_txt(MAIN_LINKS[0]))
 
     :param main_link:
     :return:
@@ -58,11 +58,11 @@ def read_txt(main_link: str) -> List:
     directory = os.path.join(PACKDIR, "nib_augsburg", "extracted_" + main_link.split("/")[-1].split(".")[0][:-3])
     if not os.path.exists(directory):
         raise FileExistsError("Run sigurd.nib_augsburg.nib_scripts.extract_tei_from_html() to use current function.")
-    for i in range(1, len(os.listdir(directory))):
+    for i in range(len(os.listdir(directory))):
         filename = os.path.join(directory, str(i) + ".txt")
         with codecs.open(filename, "r", encoding="utf-8") as f:
             text = f.read()
-            lines = [line.split("\t") for line in text.split("\n")]
+            lines = [line.split("\t") for line in text.split("\n") if line]
         retrieved_texts.append(lines)
     return retrieved_texts
 

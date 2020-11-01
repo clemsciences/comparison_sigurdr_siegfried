@@ -4,7 +4,7 @@ Alzey: Alzeye
 Amelrich: Amelrinch Amelreichen
 Amelungen: Amelunge
 Astold: Astolt
-Balmung: Balmvngen
+Balmung: Balmvngen Balmungen
 Bechelaren: Bechlarn Bechelaren
 Blödel: Bloedelin Bloedelines Bloedelinen Bloedeline
 Botelung: Botelunges
@@ -13,7 +13,7 @@ Dankwart: Danckwart
 Dietrich: Dietriche Dietrich Dietrichen Dietriches
 Eckewart: Eckewart
 Else: Else Elsen
-Etzel: Etzelen Etzeln Etzel
+Etzel: Etzelen Etzeln Etzel Ezeln Ezelen Ezele Ezel
 Gelfrat: Gelpfrat Gelpfrade Gelpfrades Gelpfrate Gelpfrates Gelpfrads
 Gerbart: Gerbart
 Gere: Gere Geren

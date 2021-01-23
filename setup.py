@@ -16,7 +16,8 @@ import os
 from setuptools import find_packages, setup
 
 DEPENDENCIES = ["requests", "PyPDF2", "gensim", "cltk>=0.1.110", "bs4",
-                "lxml"]
+                "lxml", "nltk", "norsecorpus>=1.0.2", "jupyter", "networkx",
+                "matplotlib", "pprint", "numpy", "scikit-learn", "pytest"]
 EXCLUDE_FROM_PACKAGES = []
 CURDIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -26,7 +27,7 @@ with io.open(os.path.join(CURDIR, "README.md"), "r", encoding="utf-8") as f:
 
 setup(
     name="sigurd",
-    version="1.2.10",
+    version="1.2.11",
     author="Clément Besnier",
     author_email="clem@clementbesnier.fr",
     description="Code for presentation at Graz, 6th November 2019",

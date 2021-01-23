@@ -50,6 +50,8 @@ def read_txt(main_link: str) -> List:
     TXT files to str
 
     >>> len(read_txt(MAIN_LINKS[0]))
+    39
+    >>> read_txt(MAIN_LINKS[0])[9]
 
     :param main_link:
     :return:

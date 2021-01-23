@@ -15,7 +15,7 @@ import re
 import os
 from setuptools import find_packages, setup
 
-DEPENDENCIES = ["cltk", "requests", "PyPDF2", "gensim", "cltk==0.1.110", "bs4",
+DEPENDENCIES = ["requests", "PyPDF2", "gensim", "cltk>=0.1.110", "bs4",
                 "lxml"]
 EXCLUDE_FROM_PACKAGES = []
 CURDIR = os.path.abspath(os.path.dirname(__file__))
@@ -26,7 +26,7 @@ with io.open(os.path.join(CURDIR, "README.md"), "r", encoding="utf-8") as f:
 
 setup(
     name="sigurd",
-    version="1.2.9",
+    version="1.2.10",
     author="Clément Besnier",
     author_email="clem@clementbesnier.fr",
     description="Code for presentation at Graz, 6th November 2019",

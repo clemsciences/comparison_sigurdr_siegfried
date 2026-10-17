@@ -24,6 +24,16 @@ To also install what the notebooks need (CLTK, gensim, Jupyter…):
 pip install "sigurd[notebooks]"
 ```
 
+### From a local clone
+
+To install the `sigurd` package defined in this repository, run from its root directory:
+
+```bash
+pip install .                    # or `pip install ".[notebooks]"` for the notebook dependencies
+pip install -e .                 # editable: changes to src/sigurd/ are used without reinstalling
+uv tool install .                # only the `sigurd` command, in its own isolated environment
+```
+
 ## Usage
 
 ```python

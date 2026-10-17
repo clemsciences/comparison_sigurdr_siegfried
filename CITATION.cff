@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "sigurd: comparison between the Nibelungenlied and the Völsunga saga"
+type: software
+authors:
+  - family-names: Besnier
+    given-names: Clément
+    email: clem@clementbesnier.fr
+license: MIT
+repository-code: "https://github.com/clemsciences/comparison_sigurdr_siegfried"
+url: "https://www.clementbesnier.fr/projets/cltk_2019_graz"
+keywords:
+  - old-norse
+  - middle-high-german
+  - nibelungenlied
+  - volsunga-saga

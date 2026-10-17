@@ -1,0 +1,24 @@
+# Corpora, notebooks and the LaTeX slides are kept byte-for-byte as they are.
+exclude: ^(presentation/|src/sigurd/.*/(nib_._00|rem-preprocessing|annotations)/|.*\.(xml|ipynb)$)
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=10000"]
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.1
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.9.21
+    hooks:
+      - id: uv-lock

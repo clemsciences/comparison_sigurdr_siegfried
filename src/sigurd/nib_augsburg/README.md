@@ -1,7 +1,7 @@
 # Remake the Augsburg's Nibelungenlied TEI corpus
 
 ```bash
-python nib_scripts.py
+python -m sigurd.nib_augsburg.nib_scripts
 ```
 
 - nib_retrieval.py

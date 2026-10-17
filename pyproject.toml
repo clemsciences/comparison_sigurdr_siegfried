@@ -1,0 +1,129 @@
+[build-system]
+requires = ["uv_build>=0.9,<0.10"]
+build-backend = "uv_build"
+
+[project]
+name = "sigurd"
+version = "1.3.0"
+description = "Comparison between the Nibelungenlied and the Völsunga saga (code for the CLTK presentation at Graz, 6th November 2019)."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Clément Besnier", email = "clem@clementbesnier.fr" }]
+requires-python = ">=3.11"
+keywords = ["old-norse", "middle-high-german", "siegfried", "sigurdr", "nibelungenlied", "volsunga-saga"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: German",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Text Processing :: Markup :: XML",
+    "Typing :: Typed",
+]
+dependencies = [
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+    "nltk>=3.9",
+    "requests>=2.32",
+]
+
+[project.optional-dependencies]
+# Everything the exploratory notebooks in `notebooks/` and `src/sigurd/**/*.ipynb` import.
+notebooks = [
+    "cltk",
+    "gensim",
+    "jupyterlab",
+    "matplotlib",
+    "networkx",
+    "norsecorpus>=1.0.2",
+    "numpy",
+    "pypdf2",
+    "scikit-learn",
+]
+
+[project.urls]
+Homepage = "https://www.clementbesnier.fr/projets/cltk_2019_graz"
+Source = "https://github.com/clemsciences/comparison_sigurdr_siegfried"
+Issues = "https://github.com/clemsciences/comparison_sigurdr_siegfried/issues"
+Changelog = "https://github.com/clemsciences/comparison_sigurdr_siegfried/blob/master/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+    { include-group = "lint" },
+    { include-group = "test" },
+    "pre-commit>=4",
+]
+lint = [
+    "mypy>=2.0",
+    "ruff>=0.17",
+    "types-requests",
+    "lxml-stubs",
+]
+test = [
+    "pytest>=9",
+    "pytest-cov>=6",
+]
+
+[tool.uv.build-backend]
+# Notebooks live next to the data they read, but they are not part of the library.
+wheel-exclude = ["**/*.ipynb", "**/.ipynb_checkpoints"]
+source-include = ["tests/**", "CHANGELOG.md"]
+source-exclude = ["**/.ipynb_checkpoints"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["*.ipynb"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",  # pycodestyle
+    "F",       # pyflakes
+    "I",       # isort
+    "UP",      # pyupgrade
+    "B",       # flake8-bugbear
+    "SIM",     # flake8-simplify
+    "PTH",     # flake8-use-pathlib
+    "RUF",     # ruff-specific
+    "D",       # pydocstyle
+]
+ignore = [
+    "D105", "D107",  # magic methods and __init__ need no docstring
+    "RUF001", "RUF002", "RUF003",  # Middle High German text is full of "ambiguous" characters
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D"]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests"]
+
+[[tool.mypy.overrides]]
+module = ["nltk.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "9.0"
+addopts = ["-ra", "--strict-markers", "--strict-config", "--doctest-modules", "--import-mode=importlib"]
+testpaths = ["src", "tests"]
+xfail_strict = true
+filterwarnings = ["error"]
+
+[tool.coverage.run]
+source = ["sigurd"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true

@@ -34,6 +34,9 @@ dependencies = [
     "requests>=2.32",
 ]
 
+[project.scripts]
+sigurd = "sigurd.cli:main"
+
 [project.optional-dependencies]
 # Everything the exploratory notebooks in `notebooks/` and `src/sigurd/**/*.ipynb` import.
 notebooks = [

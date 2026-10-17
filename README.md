@@ -40,6 +40,34 @@ find_occurrences_in_text(text, read_names()["Siegfried"])
 
 The corpora are bundled with the package, so no download is needed to read them.
 
+## Accessing the texts
+
+The texts are available from the command line:
+
+```bash
+sigurd list                      # identifiers of the bundled texts
+sigurd show nib-c                # print a text (half-lines separated by " | ")
+sigurd show nib-c --json         # chapters > lines > half-lines, as JSON
+sigurd export texts/             # every text as TXT and JSON, with an index.html
+sigurd serve                     # browse them on http://127.0.0.1:8000
+```
+
+| Id | Text | Source |
+| --- | --- | --- |
+| `nib-a`, `nib-b`, `nib-c`, `nib-n` | Nibelungenlied, manuscripts A, B, C and n | Bibliotheca Augustana |
+| `rem-m321-diplomatic`, `rem-m321-annotated`, `rem-m321-normalized`, `rem-m321-lemmatized` | Nibelungenlied M321, four layers | Referenzkorpus Mittelhochdeutsch |
+
+### With Docker
+
+No Python needed:
+
+```bash
+docker build -t sigurd .
+docker run --rm -p 8000:8000 sigurd                            # then open http://localhost:8000
+docker run --rm sigurd show nib-a > nib-a.txt                  # a single text
+docker run --rm -v "$PWD/texts:/out" -u "$(id -u)" sigurd export /out   # all of them
+```
+
 ## Repository layout
 
 | Path | Content |

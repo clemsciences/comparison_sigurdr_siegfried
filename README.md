@@ -26,13 +26,14 @@ pip install "sigurd[notebooks]"
 
 ### From a local clone
 
-To install the `sigurd` package defined in this repository, run from its root directory:
+To install the `sigurd` package defined in this repository, run one of these commands from its root directory:
 
-```bash
-pip install .                    # or `pip install ".[notebooks]"` for the notebook dependencies
-pip install -e .                 # editable: changes to src/sigurd/ are used without reinstalling
-uv tool install .                # only the `sigurd` command, in its own isolated environment
-```
+| Command | Installs |
+| --- | --- |
+| `pip install .` | the package |
+| `pip install ".[notebooks]"` | the package and the notebook dependencies |
+| `pip install -e .` | the package in editable mode: changes to `src/sigurd/` are used without reinstalling |
+| `uv tool install .` | only the `sigurd` command, in its own isolated environment |
 
 ## Usage
 
@@ -54,13 +55,13 @@ The corpora are bundled with the package, so no download is needed to read them.
 
 The texts are available from the command line:
 
-```bash
-sigurd list                      # identifiers of the bundled texts
-sigurd show nib-c                # print a text (half-lines separated by " | ")
-sigurd show nib-c --json         # chapters > lines > half-lines, as JSON
-sigurd export texts/             # every text as TXT and JSON, with an index.html
-sigurd serve                     # browse them on http://127.0.0.1:8000
-```
+| Command | Effect |
+| --- | --- |
+| `sigurd list` | list the identifiers of the bundled texts |
+| `sigurd show nib-c` | print a text, half-lines being separated by ` \| ` |
+| `sigurd show nib-c --json` | print a text as JSON: chapters > lines > half-lines |
+| `sigurd export texts/` | write every text as TXT and JSON in `texts/`, with an `index.html` |
+| `sigurd serve` | browse the texts on http://127.0.0.1:8000 |
 
 | Id | Text | Source |
 | --- | --- | --- |
@@ -69,14 +70,19 @@ sigurd serve                     # browse them on http://127.0.0.1:8000
 
 ### With Docker
 
-No Python needed:
+No Python needed. Build the image:
 
 ```bash
 docker build -t sigurd .
-docker run --rm -p 8000:8000 sigurd                            # then open http://localhost:8000
-docker run --rm sigurd show nib-a > nib-a.txt                  # a single text
-docker run --rm -v "$PWD/texts:/out" -u "$(id -u)" sigurd export /out   # all of them
 ```
+
+Then:
+
+| Command | Effect |
+| --- | --- |
+| `docker run --rm -p 8000:8000 sigurd` | browse the texts on http://localhost:8000 |
+| `docker run --rm sigurd show nib-a > nib-a.txt` | save a single text |
+| `docker run --rm -v "$PWD/texts:/out" -u "$(id -u)" sigurd export /out` | save every text in `texts/` |
 
 ## Repository layout
 
@@ -92,15 +98,15 @@ docker run --rm -v "$PWD/texts:/out" -u "$(id -u)" sigurd export /out   # all of
 
 The project is managed with [uv](https://docs.astral.sh/uv/).
 
-```bash
-uv sync                      # create .venv with the dev dependencies
-uv run pytest                # tests and doctests
-uv run ruff check            # lint
-uv run ruff format           # format
-uv run mypy                  # type check
-uv run pre-commit install    # run the checks before each commit
-uv build                     # build the sdist and the wheel
-```
+| Command | Effect |
+| --- | --- |
+| `uv sync` | create `.venv` with the dev dependencies |
+| `uv run pytest` | run the tests and doctests |
+| `uv run ruff check` | lint |
+| `uv run ruff format` | format |
+| `uv run mypy` | type check |
+| `uv run pre-commit install` | run the checks before each commit |
+| `uv build` | build the sdist and the wheel |
 
 Releases are published to PyPI by GitHub Actions when a `v*` tag matching the version in
 `pyproject.toml` is pushed (bump it with `uv version --bump minor`).

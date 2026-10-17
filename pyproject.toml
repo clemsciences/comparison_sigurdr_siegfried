@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "sigurd"
-version = "1.3.0"
+version = "2.0.0"
 description = "Comparison between the Nibelungenlied and the Völsunga saga (code for the CLTK presentation at Graz, 6th November 2019)."
 readme = "README.md"
 license = "MIT"

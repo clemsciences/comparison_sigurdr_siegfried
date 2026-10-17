@@ -4,7 +4,16 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and the project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.3.0] - Unreleased
+## [2.0.0] - Unreleased
+
+### Breaking changes
+
+- Python 3.11+ is required.
+- The notebook dependencies are no longer installed by default: use `pip install "sigurd[notebooks]"`.
+- `sigurd.notebooks` and `sigurd.tests` are removed; notebooks are not shipped in the wheel.
+- `compare_texts` is now `sigurd.nib_marburg.compare_texts`.
+- `read_txt` raises `FileNotFoundError` instead of `FileExistsError`.
+- The `mhg_lemmatizer` and `mhg_pos_tagger` readers read the bundled files instead of `./rem-preprocessing`.
 
 ### Changed
 

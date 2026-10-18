@@ -34,6 +34,10 @@ and the project adheres to [Semantic Versioning](https://semver.org/).
 - Progress messages of `nib_marburg.utils.get_data` go through `logging` instead of `print`.
 - A `sigurd` command (`list`, `show`, `export`, `serve`) and a Dockerfile give access to the bundled texts.
 - `sigurd.stops` provides the Old Norse and Middle High German stop word lists of CLTK 0.1, removed from CLTK 1.0.
+- `sigurd.tokenize.tokenize_middle_high_german` replaces the CLTK 0.1 Middle High German word tokenizer.
+- The notebooks no longer use CLTK: the Völsunga saga is read, already tokenized, from `norsecorpus`
+  instead of the Perseus corpus, and the Word2Vec notebook uses the gensim 4 API.
+  `cltk` and `scikit-learn` are removed from the `notebooks` extra.
 - `sigurd.PACKAGE_DIR` (a `pathlib.Path`) is added; `sigurd.PACKDIR` is kept for compatibility.
 - `nib_scripts.get_nib_tei_segments` is added; the misspelled `get_nib_tei_semgents` remains as an alias.
 

@@ -40,15 +40,13 @@ sigurd = "sigurd.cli:main"
 [project.optional-dependencies]
 # Everything the exploratory notebooks in `notebooks/` and `src/sigurd/**/*.ipynb` import.
 notebooks = [
-    "cltk",
-    "gensim",
+    "gensim>=4.3",
     "jupyterlab",
     "matplotlib",
     "networkx",
     "norsecorpus>=1.0.2",
     "numpy",
     "pypdf2",
-    "scikit-learn",
 ]
 
 [project.urls]

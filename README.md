@@ -18,7 +18,7 @@ Slides and code are available at [www.clementbesnier.fr/projets/cltk_2019_graz](
 pip install sigurd
 ```
 
-To also install what the notebooks need (CLTK, gensim, Jupyter…):
+To also install what the notebooks need (norsecorpus, gensim, Jupyter…):
 
 ```bash
 pip install "sigurd[notebooks]"

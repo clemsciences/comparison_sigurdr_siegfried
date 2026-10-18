@@ -33,6 +33,7 @@ and the project adheres to [Semantic Versioning](https://semver.org/).
 - XML parsers no longer access the network.
 - Progress messages of `nib_marburg.utils.get_data` go through `logging` instead of `print`.
 - A `sigurd` command (`list`, `show`, `export`, `serve`) and a Dockerfile give access to the bundled texts.
+- `sigurd.stops` provides the Old Norse and Middle High German stop word lists of CLTK 0.1, removed from CLTK 1.0.
 - `sigurd.PACKAGE_DIR` (a `pathlib.Path`) is added; `sigurd.PACKDIR` is kept for compatibility.
 - `nib_scripts.get_nib_tei_segments` is added; the misspelled `get_nib_tei_semgents` remains as an alias.
 

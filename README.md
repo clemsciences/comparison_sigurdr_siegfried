@@ -121,6 +121,12 @@ For Old Norse texts: https://github.com/clemsciences/old_norse_corpus and ultima
 
 The Nibelungenlied manuscripts come from https://www.hs-augsburg.de/~harsch/germanica/Chronologie/12Jh/Nibelungen.
 
+### Stop words
+
+`sigurd.stops` holds the Old Norse (by Clément Besnier) and Middle High German (by Eleftheria
+Chatziargyriou) stop word lists of [CLTK](https://github.com/cltk/cltk) 0.1.121, which CLTK 1.0
+and later no longer provide.
+
 ### Referenzkorpus Mittelhochdeutsch
 
 #### Source and license
